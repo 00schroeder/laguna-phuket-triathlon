@@ -137,59 +137,66 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
 <header class="top">
   <h1>Laguna Phuket Triathlon: what the race brings to the area</h1>
   <p class="lede">Counts from the official race results, published figures, and a spending estimate with its assumptions shown.</p>
-  <p class="asof">Data as of 9 November 2026. The 2026 race is on Sunday 15 November 2026 and is not included.</p>
+  <p class="asof">Results as of 9 November 2026. Estimate revised 11 November 2026. The 2026 race is on Sunday 15 November 2026 and is not included.</p>
   <p class="asof">The full written report, with every source, is on its own page: <a href="report.html">Laguna Phuket Triathlon Economic Impact Report</a>.</p>
 
   <div class="tiles">
     <div class="card tile">
       <span class="badge">Counted from official results</span>
-      <p class="label">Finishers, 2025</p>
+      <p class="label">Finishers across every race of the weekend, 2024</p>
+      <div class="num">About 1,060</div>
+      <p class="desc">triathlon, sprint, duathlon, relay, fun run and open water swims</p>
+      <p class="small">2024 is the latest year with a list for every race.</p>
+    </div>
+    <div class="card tile">
+      <span class="badge">Counted from official results</span>
+      <p class="label">Triathlon, sprint and duathlon finishers, 2025</p>
       <div class="num">557</div>
-      <p class="desc">finishers in the individual, sprint and duathlon races</p>
+      <p class="desc">plus 33 relay teams</p>
       <p class="small">700 in 2019.</p>
     </div>
     <div class="card tile">
-      <span class="badge">Counted from official results</span>
-      <p class="label">Relay teams finished, 2025</p>
-      <div class="num">33</div>
-      <p class="desc">relay teams finished</p>
-      <p class="small">A team is not a person. The lists do not say how many people are on a team.</p>
+      <span class="badge est">Estimate</span>
+      <p class="label">People brought to the area, 2025</p>
+      <div class="num">About 1,650</div>
+      <p class="desc">athletes and the people travelling with them, middle case</p>
+      <p class="small">Range 1,300 to 2,300.</p>
     </div>
     <div class="card tile">
       <span class="badge est">Estimate</span>
-      <p class="label">Estimated visitor spending, 2025</p>
-      <div class="num">About 27.3 million <span class="unit">baht</span></div>
-      <p class="desc">US$0.83 million, middle case</p>
-      <p class="small">Range 8.4 to 101.0 million baht.</p>
-    </div>
-    <div class="card tile">
-      <span class="badge">Counted from official results</span>
-      <p class="label">Recorded with a non-Thai country, 2025</p>
-      <div class="num">81%</div>
-      <p class="desc">of 2025 finishers (449 of 557)</p>
-      <p class="small">Country may be passport, not home. <a href="#country-note">See note.</a></p>
+      <p class="label">Spending brought to the area, 2025</p>
+      <div class="num">About 37 million <span class="unit">baht</span></div>
+      <p class="desc">US$1.13 million, middle case</p>
+      <p class="small">Range 14 to 102 million baht.</p>
     </div>
   </div>
 </header>
 
 <!-- 3 -->
 <section id="people">
-  <h2>How many people race</h2>
-  <p class="intro">Each column is the number of people who finished the individual, sprint and duathlon races that year. Relay teams are in the second chart because a team is a different unit.</p>
+  <h2>How many people take part</h2>
+  <p class="intro">The first chart counts every race held over the weekend. The charts below it show the triathlon events on their own.</p>
 
   <div class="card chartbox">
-    <h3>Finishers by event, 2017 to 2025 (people, counted)</h3>
+    <h3>Finishers across every race of the weekend, 2017 to 2025 (entries, counted)</h3>
+    <ul class="legend" id="lg-weekend"></ul>
+    <div class="chart" id="ch-weekend"></div>
+    <p class="cap" style="margin-top:8px">No run list was published for 2020, 2022, 2023 and 2025, so those columns are missing the runs. Relay members are teams multiplied by three. A person in two races is counted twice.</p>
+  </div>
+
+  <div class="card chartbox">
+    <h3>Triathlon events: finishers by event, 2017 to 2025 (people, counted)</h3>
     <ul class="legend" id="lg-events"></ul>
     <div class="chart" id="ch-events"></div>
   </div>
 
   <div class="card chartbox">
     <h3>Relay teams finishing, 2017 to 2025 (teams, counted)</h3>
-    <p class="cap">Teams, not people. Not added to the chart above.</p>
+    <p class="cap">Teams. A team is usually three people.</p>
     <div class="chart" id="ch-relay"></div>
   </div>
 
-  <p style="margin-top:16px">Press reports say "more than 1,000 triathletes" most years. The official results show 557 to 666 triathlon and duathlon finishers a year from 2022 to 2025, plus 22 to 33 relay teams.</p>
+  <p style="margin-top:16px">The organiser's press releases say "more than 1,000" athletes most years. Across every race of the weekend, the 2024 lists show about 1,060 finishers, which is in line with that. In 2017 to 2019, when 10 km and 5 km runs were held the day before the race, the weekend had about 1,500 to 2,100 finishers. The triathlon, sprint and duathlon on their own had 557 to 666 finishers a year from 2022 to 2025.</p>
 
   <button class="btn toggle" id="tg-events" aria-expanded="false" aria-controls="tb-events">Show table</button>
   <div class="scroll" id="tb-events" hidden></div>
@@ -201,9 +208,9 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
         <li>The official results for 2017 to 2025 are on the timing company Sportstats, linked from the organiser's results page. Every list was pulled in full. The rows downloaded matched the site's own total in all 45 lists.</li>
         <li>A finisher is anyone with a finish time and no did-not-finish or disqualified flag.</li>
         <li>The event pages also show a larger "entrants" number that the lists do not explain. For the individual race it was 735 in 2022, 566 in 2023, 474 in 2024 and 436 in 2025. The extra names are probably registered athletes who did not start. That is an interpretation, because the site does not label the number.</li>
-        <li>The 2022 press figure of "more than 1,200 athletes" is roughly reachable from the entrant numbers. For 2025 it is not: individual, sprint and duathlon entrants totalled 705. In 2024, 1,000 is only reached by adding the 283 fun run finishers and the swimmers to the triathletes. None of the press figures say whether they count entrants, starters or finishers.</li>
+        <li>The press figures do not say whether they count entrants, starters or finishers, or which races. The 2022 figure of "more than 1,200 athletes" is close to the entrant numbers on the event pages. In 2024, the triathletes, the 283 fun run finishers and the 104 swimmers together come to about 1,000.</li>
         <li>There was no race in 2021. The 2020 race went ahead under COVID rules, with only Thai-coded athletes in the results.</li>
-        <li>Relay lists show teams, not people.</li>
+        <li>Relay lists show teams. Three people per team is used for the weekend count.</li>
       </ul>
     </div>
   </details>
@@ -212,11 +219,11 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
 <!-- 4 -->
 <section id="countries">
   <h2>Where athletes come from</h2>
-  <p class="intro">The recorded country of each finisher in the individual, sprint and duathlon races. The next note explains why this needs care.</p>
+  <p class="intro">The recorded country of each finisher in the individual, sprint and duathlon races.</p>
 
   <div class="note" id="country-note">
-    <p><strong>Read this first.</strong> The results do not say whether the country is the athlete's passport or where they live. A British athlete who lives in Bang Tao may appear as Great Britain.</p>
-    <p>The way country was recorded appears to change from 2024. Thai-coded finishers in the individual race fell from 175 in 2023 to 64 in 2024, the year registration split into "Overseas" and "Thais &amp; Expats". Part of the shift in the chart below may be a recording change.</p>
+    <p><strong>Country means where the athlete lives.</strong> The entry form asks for country of residence, so a British athlete living in Bang Tao is recorded under Thailand.</p>
+    <p>The share recorded as living in Thailand fell sharply between 2023 and 2024, from 175 to 64 finishers in the individual race. That was the year registration split into "Overseas" and "Thais &amp; Expats". Results before 2024 may have been recorded differently.</p>
   </div>
 
   <div class="card chartbox">
@@ -245,8 +252,8 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
     <div>
       <ul>
         <li>Each result row carries a three-letter country code. Blank means the row has no code.</li>
-        <li>Two readings fit the numbers. In the first, Thai athletes stopped coming and foreign visitors replaced them. This fits the organiser's company saying that 2024 hotel revenue rose on more foreign visitors. In the second, the field was filled in differently from 2024. If foreigners living in Thailand were coded THA before 2024 and by passport after, the non-Thai share from 2024 includes Phuket residents.</li>
-        <li>The lists do not say which reading is right. The spending estimate below carries both readings into its low and high cases.</li>
+        <li>Athletes recorded as living in Thailand fell from 454 in 2022 to 108 in 2025, while those from other countries rose from 157 to 449. This fits the organiser's company saying that 2024 hotel revenue rose on more foreign visitors.</li>
+        <li>The spending estimate below uses the recorded share for each year.</li>
         <li>In 2023 the leading foreign sources in the individual race were Singapore (47) and Hong Kong (37). In 2024 and 2025 they were Great Britain, Australia and France.</li>
         <li>Country counts in the press (30, 48, 51, or "30 and 65" in one 2024 article) are not consistent enough to use.</li>
       </ul>
@@ -256,12 +263,12 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
 
 <!-- 5 -->
 <section id="spending">
-  <h2>Estimated visitor spending <span class="badge est">Estimate</span></h2>
-  <p class="intro">This adds up what visiting athletes and the people with them spend on the race and their stay. No survey of this race's participants exists, so several inputs are assumptions. Each one is shown.</p>
+  <h2>Estimated spending brought to the area <span class="badge est">Estimate</span></h2>
+  <p class="intro">This adds up what athletes and the people with them spend on the race and their stay: entry fees, rooms, food and local transport. Everyone who comes to race is counted as a visitor to the Laguna and Bang Tao area. No survey of this race's participants exists, so several inputs are assumptions. Each one is shown. The figure is directional.</p>
 
   <div class="card chartbox">
-    <h3>Visitor spending by year, 2022 to 2025 (million baht, estimate)</h3>
-    <p class="cap">Dot is the middle case. The bar runs from the low case to the high case. Athletes living in Phuket are not counted.</p>
+    <h3>Spending by year, 2022 to 2025 (million baht, estimate)</h3>
+    <p class="cap">Dot is the middle case. The bar runs from the low case to the high case.</p>
     <div class="chart" id="ch-range"></div>
   </div>
 
@@ -270,23 +277,23 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
   <div class="card chartbox">
     <h3>2025 middle case by spending line (million baht, estimate)</h3>
     <div class="chart" id="ch-lines"></div>
-    <p class="cap" style="margin-top:8px">Phuket-resident athletes' entry fees (0.48 million baht) are not included in these lines.</p>
+    <p class="cap" style="margin-top:8px">Rooms are the largest line. Most athletes stay in the Laguna hotels or in rented condos and guesthouses nearby.</p>
   </div>
 
   <details>
     <summary>How this was worked out</summary>
     <div>
       <ul>
-        <li><strong>Who is counted.</strong> People who started the individual, sprint and duathlon races (736, 670, 640 and 562 in 2022 to 2025), plus relay members. Relay starts were 24, 23, 24 and 33 teams. People per team is an assumption: 2 in the low case, 3 in the middle and high cases. Fun runs and open water swims are left out.</li>
-        <li><strong>Three groups.</strong> Athletes from abroad, athletes from elsewhere in Thailand, and athletes living in Phuket. Phuket residents add nothing to the total, because they have no hotel bill and their spending is local money moving around. Their entry fees are shown as a memo.</li>
-        <li><strong>Living in Thailand.</strong> For 2022 and 2023 this is the recorded Thai share plus 10% (low), 5% (middle) or 0% (high) of the non-Thai finishers. For 2024 and 2025 the low case holds the share at the 2023 level of 48.9%, the high case takes the recorded Thai share at face value, and the middle case is halfway between. This is the largest single source of uncertainty for 2024 and 2025.</li>
-        <li><strong>Living in Phuket.</strong> 50% (low), 35% (middle) or 20% (high) of those living in Thailand. This is an assumption. No source gives it.</li>
-        <li><strong>The 2025 middle case.</strong> 562 starters plus 33 relay teams at 3 people each gives 661 athletes. 34.2% live in Thailand: 226 people. That leaves 435 from abroad. Of the 226, 35% live in Phuket (79) and 147 come from elsewhere in Thailand.</li>
-        <li>An athlete from abroad spends 52,295 baht: entry fee 9,895, hotel 26,000 (5 nights at 5,200), food 7,500, transport 1,400, and one companion's food 7,500. An athlete from elsewhere in Thailand spends 30,844 baht. The total is 435 x 52,295 plus 147 x 30,844, which is 27,282,393 baht.</li>
+        <li><strong>Who is counted.</strong> People who started the individual, sprint and duathlon races (736, 670, 640 and 562 in 2022 to 2025), plus relay teams (24, 23, 24 and 33) at three people each. The fun run, kids' run and open water swims are part of the same weekend. The people in them are treated as the athletes, family and friends already counted, so they are not added a second time.</li>
+        <li><strong>Where they live.</strong> The recorded country for each year: 74.3%, 48.9%, 21.2% and 19.4% of athletes lived in Thailand in 2022 to 2025. Of those, 35% (low), 20% (middle) or 10% (high) are taken to live on Phuket and sleep at home. That share is an assumption. They are counted for their entry fee and one day of food, with no hotel.</li>
+        <li><strong>Companions.</strong> 1 (low), 1.5 (middle) or 2.5 (high) per athlete. This is an assumption. An athlete usually brings at least one other person, and 2.49 was measured at Ironman Mallorca. One room is counted for every two people.</li>
+        <li><strong>Nights.</strong> 3, 5 or 7 for athletes from abroad and 2, 3 or 4 for athletes from elsewhere in Thailand. This is an assumption. The shortest stay is the night before the race and race night.</li>
+        <li><strong>The 2025 middle case.</strong> 562 starters plus 33 relay teams at 3 people each gives 661 athletes. 19.4% live in Thailand: 128 people. That leaves 533 from abroad. Of the 128, 20% live on Phuket (26) and 102 come from elsewhere in Thailand. With 1.5 companions each, that is about 1,650 people.</li>
+        <li>An athlete from abroad and the people with them spend 62,545 baht: entry fee 9,895, rooms 32,500 (5 nights, 1.25 rooms, 5,200 a night), food 18,750 (2.5 people, 5 days, 1,500 a day) and transport 1,400. An athlete from elsewhere in Thailand spends 36,244 baht. An athlete living on Phuket spends 8,544 baht. The total is 533 x 62,545 plus 102 x 36,244 plus 26 x 8,544, which is 37,255,517 baht.</li>
         <li><strong>Dollar amounts</strong> use yearly average rates from the Federal Reserve (<a href="https://fred.stlouisfed.org/series/AEXTHUS" target="_blank" rel="noopener">FRED AEXTHUS</a>): 35.0500 (2022), 34.7841 (2023), 35.2845 (2024) and 32.8619 (2025) baht per dollar.</li>
-        <li><strong>Low and high cases</strong> stack every low or every high input together. They are outer bounds. Most of the width comes from companions and nights.</li>
-        <li><strong>A check against visitor statistics.</strong> An athlete from abroad and one companion spend about 52,000 baht between them. The average international visitor to Phuket spent 37,440 baht per visit in 2024 (<a href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf" target="_blank" rel="noopener">C9 Hotelworks</a>, from Ministry of Tourism and Sports data).</li>
-        <li>The middle case barely moves from 2023 to 2025 even though the field shrank by about a tenth. More of the field is recorded as coming from abroad, and visitors from abroad spend more per head. If the 2024 change was only a change in recording, the low case is the closer one for 2024 and 2025.</li>
+        <li><strong>Low and high cases</strong> stack every low or every high input together. They are outer bounds. Most of the width comes from companions, nights and room rates.</li>
+        <li><strong>A check against visitor statistics.</strong> An athlete from abroad and the people with them spend about 25,000 baht a person. The average international visitor to Phuket spent 37,440 baht per visit in 2024 (<a href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf" target="_blank" rel="noopener">C9 Hotelworks</a>, from Ministry of Tourism and Sports data). The middle case is on the cautious side.</li>
+        <li>The middle case rises from 2022 to 2024 even though the field shrank. More of the field comes from abroad, and visitors from abroad stay longer and spend more.</li>
       </ul>
     </div>
   </details>
@@ -306,18 +313,14 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
         <p class="stat" id="c-state"></p>
       </fieldset>
       <div id="c-sliders"></div>
-      <fieldset>
-        <legend>People per relay team</legend>
-        <div class="segrow" id="c-team" role="group" aria-label="People per relay team"></div>
-      </fieldset>
       <p class="fixed" id="c-fixed"></p>
     </div>
     <div class="res" role="status" aria-live="polite">
       <div class="card" style="background:var(--page)">
-        <p class="cap" style="margin:0 0 4px">Estimated visitor spending</p>
+        <p class="cap" style="margin:0 0 4px">Estimated spending brought to the area</p>
         <div class="big" id="r-total"></div>
         <p style="margin:4px 0 0" id="r-usd"></p>
-        <h3 style="font-size:0.98rem;margin:18px 0 0">Athletes counted</h3>
+        <h3 style="font-size:0.98rem;margin:18px 0 0">People counted</h3>
         <dl class="kv" id="r-ath"></dl>
         <h3 style="font-size:0.98rem;margin:18px 0 0">Spending lines (million baht)</h3>
         <dl class="kv" id="r-lines"></dl>
@@ -336,7 +339,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
     <li>No multiplier is applied. Only first-round spending is counted, not the wages and supplier purchases that follow. No sourced multiplier for Phuket was found.</li>
     <li>November is the start of Phuket's high season, so some hotel nights may have replaced guests who would have stayed anyway. No November occupancy figure was found.</li>
     <li>There is no survey of this race's participants. Stay length, party size and spending are borrowed or assumed.</li>
-    <li>Spectators, athletes who paid but did not start, fun run and swim visitors, and training camps before the race are not counted.</li>
+    <li>Spectators who did not travel with an athlete, athletes who paid but did not start, anyone who came only for the fun run or a swim, sponsors' spending, and training camps before the race are not counted.</li>
     <li>Entry fees go to the organiser, which pays the race's costs out of them. Those costs are not published.</li>
     <li>Some foreign athletes may have been in Phuket on holiday regardless, and the estimate counts their whole stay. Some of the bike truck money is spent outside Phuket.</li>
   </ul>
@@ -347,7 +350,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
   <h2>Figures the organiser has published</h2>
   <p class="intro">No independent study of this race's economic impact was found, in English or Thai. The published figures below are forward-looking projections, not measured results.</p>
   <div class="scroll" id="tb-pub"></div>
-  <p style="margin-top:16px">The estimate above is lower because the organiser assumed more than 1,100 athletes and three to five companions each. The results lists show 661 athletes in 2025 in the events counted, and with four companions and 1,100 athletes the same method as the estimate above gives about 98 million baht.</p>
+  <p style="margin-top:16px">Run with the organiser's 1,100 athletes, the same method as the estimate above gives about 62 million baht in the middle case, and about 112 million baht with four companions per athlete. The organiser's figures sit inside that span. The 2025 estimate is lower mainly because 661 athletes started the events counted.</p>
 </section>
 
 <!-- 7 -->
@@ -373,7 +376,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
     </div>
   </div>
 
-  <p style="margin-top:16px">For scale, the 2025 middle-case estimate (27.3 million baht) equals about 0.7% of the company's hotel revenue that year, and only part of it reaches the company.</p>
+  <p style="margin-top:16px">For scale, the 2025 middle-case estimate (37.3 million baht) equals about 1% of the company's hotel revenue that year, and only part of it reaches the company.</p>
 
   <button class="btn toggle" id="tg-rev" aria-expanded="false" aria-controls="tb-rev">Show table</button>
   <div class="scroll" id="tb-rev" hidden></div>
@@ -432,7 +435,7 @@ footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid);
 </section>
 
 <footer>
-  <p>Prepared 9 November 2026 from public sources. Estimates are labelled as estimates. The full written report is on its own page: <a href="report.html">Laguna Phuket Triathlon Economic Impact Report</a>.</p>
+  <p>Prepared 9 November 2026 from public sources. Estimate revised 11 November 2026. Estimates are labelled as estimates. The full written report is on its own page: <a href="report.html">Laguna Phuket Triathlon Economic Impact Report</a>.</p>
 </footer>
 
 </div>
@@ -450,38 +453,42 @@ var YEARDATA = {
   2025: { starters: 562, relay: 33, rate: 32.8619 }
 };
 var TH_SHARE = {
-  low:  { 2022: 76.9, 2023: 54.1, 2024: 48.9, 2025: 48.9 },
-  mid:  { 2022: 75.6, 2023: 51.5, 2024: 35.1, 2025: 34.2 },
+  low:  { 2022: 74.3, 2023: 48.9, 2024: 21.2, 2025: 19.4 },
+  mid:  { 2022: 74.3, 2023: 48.9, 2024: 21.2, 2025: 19.4 },
   high: { 2022: 74.3, 2023: 48.9, 2024: 21.2, 2025: 19.4 }
 };
+var PER_TEAM = 3;
 var PRESETS = {
-  low:  { phShare: 50, entryUSD: 269.58, entryTHB: 4275, nA: 3, nD: 2, roomsPer: 0.75, roomRate: 3300, foodA: 800,  foodD: 600,  transA: 600,  transD: 600,  comp: 0.5, perTeam: 2 },
-  mid:  { phShare: 35, entryUSD: 301.10, entryTHB: 6044, nA: 5, nD: 3, roomsPer: 1,    roomRate: 5200, foodA: 1500, foodD: 1000, transA: 1400, transD: 3200, comp: 1.0, perTeam: 3 },
-  high: { phShare: 20, entryUSD: 320.67, entryTHB: 6957, nA: 7, nD: 4, roomsPer: 1,    roomRate: 8000, foodA: 2500, foodD: 1500, transA: 2400, transD: 6000, comp: 2.5, perTeam: 3 }
+  low:  { phShare: 35, entryUSD: 269.58, entryTHB: 4275, nA: 3, nD: 2, roomRate: 3300, foodA: 800,  foodD: 600,  transA: 600,  transD: 600,  comp: 1.0 },
+  mid:  { phShare: 20, entryUSD: 301.10, entryTHB: 6044, nA: 5, nD: 3, roomRate: 5200, foodA: 1500, foodD: 1000, transA: 1400, transD: 3200, comp: 1.5 },
+  high: { phShare: 10, entryUSD: 320.67, entryTHB: 6957, nA: 7, nD: 4, roomRate: 8000, foodA: 2500, foodD: 1500, transA: 2400, transD: 6000, comp: 2.5 }
 };
 function estimate(year, p) {
   var y = YEARDATA[year];
-  var athletes = y.starters + y.relay * p.perTeam;
+  var athletes = y.starters + y.relay * PER_TEAM;
   var living = Math.round(athletes * p.thShare / 100);
   var phuket = Math.round(living * p.phShare / 100);
   var domestic = living - phuket;
   var abroad = athletes - living;
-  var rooms = p.roomsPer + Math.max(0, p.comp - 1) * 0.5;
+  var party = 1 + p.comp;
+  var rooms = party / 2;
   var entryAbroad = Math.round(p.entryUSD * y.rate);
-  var perAbroad = entryAbroad + p.nA * rooms * p.roomRate + p.nA * p.foodA + p.transA + p.comp * p.nA * p.foodA;
-  var perDomestic = p.entryTHB + p.nD * rooms * p.roomRate + p.nD * p.foodD + p.transD + p.comp * p.nD * p.foodD;
+  var perAbroad = entryAbroad + p.nA * rooms * p.roomRate + p.nA * p.foodA * party + p.transA;
+  var perDomestic = p.entryTHB + p.nD * rooms * p.roomRate + p.nD * p.foodD * party + p.transD;
+  var perPhuket = p.entryTHB + p.foodD * party;
+  var athleteFood = abroad * p.nA * p.foodA + domestic * p.nD * p.foodD + phuket * p.foodD;
   var lines = {
     accommodation: abroad * p.nA * rooms * p.roomRate + domestic * p.nD * rooms * p.roomRate,
-    entry: abroad * entryAbroad + domestic * p.entryTHB,
-    food: abroad * p.nA * p.foodA + domestic * p.nD * p.foodD,
-    companions: abroad * p.comp * p.nA * p.foodA + domestic * p.comp * p.nD * p.foodD,
+    entry: abroad * entryAbroad + (domestic + phuket) * p.entryTHB,
+    food: athleteFood,
+    companions: p.comp * athleteFood,
     transport: abroad * p.transA + domestic * p.transD
   };
   return {
     athletes: athletes, living: living, phuket: phuket, domestic: domestic, abroad: abroad,
-    perAbroad: perAbroad, perDomestic: perDomestic, lines: lines,
-    phuketEntry: phuket * p.entryTHB,
-    total: abroad * perAbroad + domestic * perDomestic,
+    people: athletes * party, rooms: rooms,
+    perAbroad: perAbroad, perDomestic: perDomestic, perPhuket: perPhuket, lines: lines,
+    total: abroad * perAbroad + domestic * perDomestic + phuket * perPhuket,
     rate: y.rate
   };
 }
@@ -522,12 +529,23 @@ var COUNTRY_ROWS = [
 var TOP24 = [['Thailand', 128], ['Great Britain', 90], ['Australia', 50], ['France', 37], ['United States', 35], ['Germany', 31], ['Russia', 29], ['Italy', 23], ['Switzerland', 16], ['Netherlands', 15]];
 var TOP25 = [['Great Britain', 108], ['Thailand', 108], ['Australia', 47], ['France', 31], ['Russia', 30], ['Germany', 24], ['Netherlands', 22], ['United States', 20], ['Italy', 17], ['Malaysia', 14]];
 var EST = [
-  { y: 2022, ath: 808, split: '197 / 397 / 214', lo: 7.3, mid: 22.7, hi: 79.1, ulo: '0.21', umid: '0.65', uhi: '2.26' },
-  { y: 2023, ath: 739, split: '358 / 247 / 133', lo: 9.2, mid: 26.6, hi: 91.2, ulo: '0.26', umid: '0.76', uhi: '2.62' },
-  { y: 2024, ath: 712, split: '462 / 162 / 87', lo: 9.4, mid: 29.5, hi: 107.9, ulo: '0.27', umid: '0.84', uhi: '3.06' },
-  { y: 2025, ath: 661, split: '435 / 147 / 79', lo: 8.4, mid: 27.3, hi: 101.0, ulo: '0.25', umid: '0.83', uhi: '3.07' }
+  { y: 2022, ath: 808, split: '208 / 480 / 120', lo: 11.7, mid: 31.6, hi: 85.3, ulo: '0.33', umid: '0.90', uhi: '2.43' },
+  { y: 2023, ath: 739, split: '378 / 289 / 72', lo: 13.3, mid: 35.0, hi: 95.0, ulo: '0.38', umid: '1.00', uhi: '2.73' },
+  { y: 2024, ath: 712, split: '561 / 121 / 30', lo: 15.6, mid: 40.1, hi: 109.5, ulo: '0.44', umid: '1.14', uhi: '3.10' },
+  { y: 2025, ath: 661, split: '533 / 102 / 26', lo: 14.3, mid: 37.3, hi: 102.3, ulo: '0.43', umid: '1.13', uhi: '3.11' }
 ];
-var LINES25 = [['Accommodation', 13.60], ['Entry fees', 5.19], ['Food and local spending', 3.70], ['Companions', 3.70], ['Transport and bike', 1.08]];
+var LINES25 = [['Rooms', 19.31], ['Companions\' food', 6.49], ['Entry fees', 6.05], ['Athletes\' food and local spending', 4.33], ['Transport and bike', 1.07]];
+var WEEKEND = {
+  2017: { tri: 491, rel: 87, run: 915, swim: null },
+  2018: { tri: 708, rel: 96, run: 1278, swim: null },
+  2019: { tri: 700, rel: 72, run: 923, swim: null },
+  2020: { tri: 431, rel: 33, run: null, swim: null },
+  2021: null,
+  2022: { tri: 666, rel: 66, run: null, swim: null },
+  2023: { tri: 626, rel: 66, run: null, swim: null },
+  2024: { tri: 606, rel: 69, run: 283, swim: 104 },
+  2025: { tri: 557, rel: 99, run: null, swim: 85 }
+};
 var PUB = [
   ['More than 74 million baht tourism spending in Phuket', 'Triathlon, about 2016', 'Laguna Phuket (organiser)', 'Press release titled for the 2017 date', 'Projection', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/', 'lagunaphukettri.com', false],
   ['About 9 million baht hotel room and food revenue inside Laguna', 'Triathlon race weekend, about 2016', 'Laguna Phuket', 'Same release', 'Projection', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/', 'lagunaphukettri.com', false],
@@ -546,11 +564,11 @@ var REV = [
 ];
 var MISSING = [
   'Any survey of Laguna Phuket Triathlon participants (residence, stay, party size, spending)',
-  'Whether the results country field is passport or residence, and why it changed after 2023',
+  'Why the share of athletes recorded as living in Thailand fell so sharply after 2023',
   'Any independent or measured economic impact of the triathlon; any figure after about 2016',
   'A sourced spending multiplier for Phuket',
   'Entry fees for 2022 to 2025; sprint, swim and fun run fees for any year',
-  'Relay team sizes; the meaning of the "entrants" figure on event pages',
+  'The meaning of the "entrants" figure on event pages; how many fun run and swim entrants also raced the triathlon',
   'Fun run lists for 2020, 2022, 2023 and 2025',
   'November occupancy and room rates for Phuket; Bang Tao rates outside Laguna hotels',
   'Race costs, race-week hotel revenue and occupancy at Laguna',
@@ -822,7 +840,7 @@ function rangeChart(host, w) {
   host.textContent = '';
   var rowH = 62, m = { l: 44, r: 22, t: 8, b: 28 };
   var h = m.t + rowH * EST.length + m.b;
-  var svg = S('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-label': 'Estimated visitor spending 2022 to 2025 in million baht, with low, middle and high cases' }, host);
+  var svg = S('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-label': 'Estimated spending 2022 to 2025 in million baht, with low, middle and high cases' }, host);
   var pw = w - m.l - m.r;
   function X(v) { return m.l + (v / 120) * pw; }
   [0, 20, 40, 60, 80, 100, 120].forEach(function (t) {
@@ -870,11 +888,21 @@ var evSeries = [
 ];
 legend('lg-events', evSeries);
 var coSeries = [
-  { id: 'tha', label: 'Thai (THA)', cls: 'c1', sw: 's1', color: 'var(--c1)' },
-  { id: 'non', label: 'Non-Thai', cls: 'c2', sw: 's2', color: 'var(--c2)' },
+  { id: 'tha', label: 'Living in Thailand', cls: 'c1', sw: 's1', color: 'var(--c1)' },
+  { id: 'non', label: 'Other countries', cls: 'c2', sw: 's2', color: 'var(--c2)' },
   { id: 'blank', label: 'Blank country', cls: 'cg', sw: 'sg', color: 'var(--gray)' }
 ];
 legend('lg-country', coSeries);
+var wkSeries = [
+  { id: 'tri', label: 'Triathlon, sprint and duathlon', cls: 'c1', sw: 's1', color: 'var(--c1)' },
+  { id: 'rel', label: 'Relay members (teams x 3)', cls: 'cg', sw: 'sg', color: 'var(--gray)' },
+  { id: 'run', label: 'Runs (10 km, 5 km, kids, fun run)', cls: 'c2', sw: 's2', color: 'var(--c2)' },
+  { id: 'swim', label: 'Open water swims', cls: 'c3', sw: 's3', color: 'var(--c3)' }
+];
+legend('lg-weekend', wkSeries);
+mount(document.getElementById('ch-weekend'), function (host, w) {
+  columnChart(host, { cats: YEARS, data: WEEKEND, series: wkSeries, max: 2400, ticks: [0, 600, 1200, 1800, 2400], ml: 46, totalLabel: 'Finishers in listed races', aria: 'Stacked columns of finishers across every race of the weekend, 2017 to 2025. Totals: 1,493, 2,082, 1,695, 464, not held, 732, 692, 1,062, 741. No run list for 2020, 2022, 2023 and 2025.' }, w);
+});
 
 mount(document.getElementById('ch-events'), function (host, w) {
   columnChart(host, { cats: YEARS, data: evData, series: evSeries, max: 800, ticks: [0, 200, 400, 600, 800], totalLabel: 'Total finishers', aria: 'Stacked columns of finishers by event, 2017 to 2025. 2021 was not held. Totals: 491, 708, 700, 431, none, 666, 626, 606, 557.' }, w);
@@ -883,8 +911,8 @@ mount(document.getElementById('ch-relay'), function (host, w) {
   columnChart(host, { cats: YEARS, data: relData, series: [{ id: 'rel', label: 'Relay teams finished', cls: 'cg', color: 'var(--gray)' }], max: 40, ticks: [0, 10, 20, 30, 40], totalLabel: 'Teams finished', h: w < 480 ? 210 : 230, aria: 'Columns of relay teams finishing, 2017 to 2025. 29, 32, 24, 11, not held, 22, 22, 23, 33.' }, w);
 });
 mount(document.getElementById('ch-country'), function (host, w) {
-  columnChart(host, { cats: YEARS, data: coData, series: coSeries, max: 800, ticks: [0, 200, 400, 600, 800], totalLabel: 'Finishers', aria: 'Stacked columns of finishers by recorded country: Thai, non-Thai and blank, 2017 to 2025. 2021 was not held.',
-    extra: function (c) { return coData[c] ? ' (Thai share of those with a country: ' + coData[c].share + ')' : ''; } }, w);
+  columnChart(host, { cats: YEARS, data: coData, series: coSeries, max: 800, ticks: [0, 200, 400, 600, 800], totalLabel: 'Finishers', aria: 'Stacked columns of finishers by recorded country: living in Thailand, other countries and blank, 2017 to 2025. 2021 was not held.',
+    extra: function (c) { return coData[c] ? ' (Thailand share of those with a country: ' + coData[c].share + ')' : ''; } }, w);
 });
 mount(document.getElementById('ch-top24'), function (host, w) {
   barsChart(host, { items: TOP24, max: 130, fmt: num, unit: 'finishers, 2024', aria: 'Top 10 countries by finishers in 2024' }, w);
@@ -894,7 +922,7 @@ mount(document.getElementById('ch-top25'), function (host, w) {
 });
 mount(document.getElementById('ch-range'), rangeChart);
 mount(document.getElementById('ch-lines'), function (host, w) {
-  barsChart(host, { items: LINES25, max: 14, fmt: function (v) { return fix(v, 2); }, unit: 'million baht, 2025 middle case (estimate)', rowH: 40, aria: 'Estimated 2025 spending by line, million baht: accommodation 13.60, entry fees 5.19, food and local spending 3.70, companions 3.70, transport and bike 1.08' }, w);
+  barsChart(host, { items: LINES25, max: 20, fmt: function (v) { return fix(v, 2); }, unit: 'million baht, 2025 middle case (estimate)', rowH: 40, aria: 'Estimated 2025 spending by line, million baht: rooms 19.31, companions food 6.49, entry fees 6.05, athletes food and local spending 4.33, transport and bike 1.07' }, w);
 });
 var revFmt = function (v) { return fix(v, 1); };
 function revData(idx) { var o = {}; REV.forEach(function (r) { o[r[0]] = { v: r[idx] }; }); return o; }
@@ -910,14 +938,14 @@ toggle('tg-events', 'tb-events', function (box) {
   makeTable(box, EVENT_HEAD, EVENT_ROWS.map(function (r) { return r.map(function (c, i) { return i > 0 && typeof c === 'number' ? num(c) : c; }); }), 2);
 });
 toggle('tg-country', 'tb-country', function (box) {
-  makeTable(box, ['Year', 'Finishers', 'Thai (THA)', 'Non-Thai', 'Blank country', 'Thai share of those with a country'], COUNTRY_ROWS, 1);
+  makeTable(box, ['Year', 'Finishers', 'Living in Thailand (THA)', 'Other countries', 'Blank country', 'Thailand share of those with a country'], COUNTRY_ROWS, 1);
 });
 toggle('tg-rev', 'tb-rev', function (box) {
   var rows = REV.map(function (r) { return [r[0], fix(r[1], 1), fix(r[2], 1), fix(r[3], 1), fix(r[4], 1), fix(r[5], 1)]; });
   rows.push(['H1 2026', '2,141.9', '2,208.5', '4,408.8', 'n/a', 'n/a']);
   makeTable(box, ['Year', 'Hotel operations (million baht)', 'Property development (million baht)', 'Total revenue (million baht)', 'Profit for the year (million baht)', 'Total revenue (US$ million)'], rows, 1);
 });
-makeTable(document.getElementById('tb-est'), ['Year', 'Athletes counted (middle)', 'From abroad / elsewhere in Thailand / Phuket (middle)', 'Low', 'Middle', 'High'],
+makeTable(document.getElementById('tb-est'), ['Year', 'Athletes counted', 'From abroad / elsewhere in Thailand / living on Phuket (middle)', 'Low', 'Middle', 'High'],
   EST.map(function (e) {
     return [e.y, e.ath, e.split,
       fix(e.lo, 1) + 'm baht (US$' + e.ulo + 'm)', fix(e.mid, 1) + 'm baht (US$' + e.umid + 'm)', fix(e.hi, 1) + 'm baht (US$' + e.uhi + 'm)'];
@@ -950,7 +978,7 @@ makeTable(document.getElementById('tb-est'), ['Year', 'Athletes counted (middle)
 var state = { year: 2025, base: 'mid', p: presetFor('mid', 2025) };
 var SL = [
   { id: 'thShare', label: 'Share of athletes living in Thailand', min: 0, max: 100, step: 0.1, f: function (v) { return fix(v, 1) + '%'; } },
-  { id: 'phShare', label: 'Share of those living in Phuket', min: 0, max: 100, step: 1, f: function (v) { return fix(v, 0) + '%'; } },
+  { id: 'phShare', label: 'Share of those who live on Phuket and sleep at home', min: 0, max: 100, step: 1, f: function (v) { return fix(v, 0) + '%'; } },
   { id: 'nA', label: 'Nights, athletes from abroad', min: 1, max: 14, step: 1, f: function (v) { return String(v); } },
   { id: 'nD', label: 'Nights, athletes from elsewhere in Thailand', min: 1, max: 10, step: 1, f: function (v) { return String(v); } },
   { id: 'roomRate', label: 'Room rate per night', min: 1000, max: 12000, step: 100, f: function (v) { return num(v) + ' baht'; } },
@@ -958,9 +986,9 @@ var SL = [
   { id: 'foodD', label: 'Food and local spending per person per day, from elsewhere in Thailand', min: 0, max: 3000, step: 50, f: function (v) { return num(v) + ' baht'; } },
   { id: 'comp', label: 'Companions per athlete', min: 0, max: 5, step: 0.5, f: function (v) { return fix(v, 1); } }
 ];
-var ADJ = ['thShare', 'phShare', 'nA', 'nD', 'roomRate', 'foodA', 'foodD', 'comp', 'perTeam'];
+var ADJ = ['thShare', 'phShare', 'nA', 'nD', 'roomRate', 'foodA', 'foodD', 'comp'];
 var NAMES = { low: 'Low', mid: 'Middle', high: 'High' };
-var sEl = {}, yBtn = {}, pBtn = {}, tBtn = {};
+var sEl = {}, yBtn = {}, pBtn = {};
 
 function mkBtn(parent, text, fn) { var b = H('button', 'btn', text, parent); b.type = 'button'; b.addEventListener('click', fn); return b; }
 [2022, 2023, 2024, 2025].forEach(function (y) {
@@ -968,9 +996,6 @@ function mkBtn(parent, text, fn) { var b = H('button', 'btn', text, parent); b.t
 });
 ['low', 'mid', 'high'].forEach(function (k) {
   pBtn[k] = mkBtn(document.getElementById('c-preset'), NAMES[k], function () { state.base = k; state.p = presetFor(k, state.year); sync(); });
-});
-[2, 3].forEach(function (n) {
-  tBtn[n] = mkBtn(document.getElementById('c-team'), n + ' people', function () { state.p.perTeam = n; sync(); });
 });
 SL.forEach(function (s) {
   var row = H('div', 'srow', null, document.getElementById('c-sliders'));
@@ -995,48 +1020,45 @@ function sync() {
   [2022, 2023, 2024, 2025].forEach(function (y) { yBtn[y].setAttribute('aria-pressed', y === state.year ? 'true' : 'false'); });
   var active = null;
   ['low', 'mid', 'high'].forEach(function (k) { var on = matches(k); if (on) { active = k; } pBtn[k].setAttribute('aria-pressed', on ? 'true' : 'false'); });
-  [2, 3].forEach(function (n) { tBtn[n].setAttribute('aria-pressed', state.p.perTeam === n ? 'true' : 'false'); });
   document.getElementById('c-state').textContent = active ? 'Settings match the ' + NAMES[active].toLowerCase() + ' case for ' + state.year + '.' : 'Custom settings, started from the ' + NAMES[state.base].toLowerCase() + ' case.';
   SL.forEach(function (s) { sEl[s.id].inp.value = state.p[s.id]; sEl[s.id].out.textContent = s.f(state.p[s.id]); });
   var p = state.p, base = presetFor(state.base, state.year);
-  document.getElementById('c-fixed').textContent = 'Set by the ' + NAMES[state.base].toLowerCase() + ' case: entry fee from abroad US$' + fix(p.entryUSD, 2) + ' and from Thailand ' + num(p.entryTHB) + ' baht (both include the 8.7% handling fee), rooms per athlete ' + p.roomsPer + ', transport and bike ' + num(p.transA) + ' baht from abroad and ' + num(p.transD) + ' baht from elsewhere in Thailand.';
+  document.getElementById('c-fixed').textContent = 'Set by the ' + NAMES[state.base].toLowerCase() + ' case: entry fee from abroad US$' + fix(p.entryUSD, 2) + ' and from Thailand ' + num(p.entryTHB) + ' baht (both include the 8.7% handling fee), one room for every two people, transport and bike ' + num(p.transA) + ' baht from abroad and ' + num(p.transD) + ' baht from elsewhere in Thailand.';
   var r = estimate(state.year, p), y = YEARDATA[state.year];
   document.getElementById('r-total').textContent = fix(r.total / 1e6, 1) + ' million baht';
   document.getElementById('r-usd').textContent = 'US$' + fix(r.total / r.rate / 1e6, 2) + ' million, estimate for ' + state.year + ' (exactly ' + num(Math.round(r.total)) + ' baht)';
   dl(document.getElementById('r-ath'), [
-    ['Athletes counted', num(r.athletes)],
+    ['Athletes', num(r.athletes)],
     ['From abroad', num(r.abroad)],
     ['From elsewhere in Thailand', num(r.domestic)],
-    ['Living in Phuket (add nothing)', num(r.phuket)]
+    ['Living on Phuket (no hotel)', num(r.phuket)],
+    ['Athletes plus companions', num(Math.round(r.people))]
   ]);
   var L = r.lines;
   dl(document.getElementById('r-lines'), [
-    ['Accommodation', fix(L.accommodation / 1e6, 2)],
+    ['Rooms', fix(L.accommodation / 1e6, 2)],
+    ['Companions\' food', fix(L.companions / 1e6, 2)],
     ['Entry fees', fix(L.entry / 1e6, 2)],
-    ['Food and local spending', fix(L.food / 1e6, 2)],
-    ['Companions', fix(L.companions / 1e6, 2)],
+    ['Athletes\' food and local spending', fix(L.food / 1e6, 2)],
     ['Transport and bike', fix(L.transport / 1e6, 2)]
   ]);
-  document.getElementById('r-memo').textContent = y.starters + ' starters plus ' + y.relay + ' relay teams at ' + p.perTeam + ' people each. Memo, not added: entry fees paid by Phuket-resident athletes, ' + fix(r.phuketEntry / 1e6, 2) + ' million baht.';
+  document.getElementById('r-memo').textContent = y.starters + ' starters plus ' + y.relay + ' relay teams at ' + PER_TEAM + ' people each. Rooms counted: ' + fix(r.rooms, 2) + ' per athlete.';
 }
 sync();
 
 (function () {
   var rows = [
-    ['People per relay team', '2', '3', '3', 'Assumption'],
-    ['Living in Thailand, 2022', '76.9%', '75.6%', '74.3%', 'Recorded Thai share plus an assumed share of non-Thai'],
-    ['Living in Thailand, 2023', '54.1%', '51.5%', '48.9%', 'Same'],
-    ['Living in Thailand, 2024', '48.9%', '35.1%', '21.2%', 'Assumption carrying the country-field change'],
-    ['Living in Thailand, 2025', '48.9%', '34.2%', '19.4%', 'Same'],
-    ['Phuket share of Thailand residents', '50%', '35%', '20%', 'Assumption'],
+    ['People per relay team', '3', '3', '3', 'Usual size of a swim, bike, run relay'],
+    ['Living in Thailand, 2022 / 2023 / 2024 / 2025', '74.3% / 48.9% / 21.2% / 19.4%', 'Same', 'Same', 'Recorded country of finishers'],
+    ['Share of those who live on Phuket and sleep at home', '35%', '20%', '10%', 'Assumption'],
     ['Entry fee, from abroad', 'US$269.58', 'US$301.10', 'US$320.67', '2026 list price including 8.7% fee'],
     ['Entry fee, from Thailand', '4,275 baht', '6,044 baht', '6,957 baht', '2026 list price including 8.7% fee'],
     ['Nights, abroad / elsewhere in Thailand', '3 / 2', '5 / 3', '7 / 4', 'Assumption'],
-    ['Rooms per athlete', '0.75', '1', '1 (+0.75 for companions)', 'Assumption'],
+    ['Companions per athlete', '1.0', '1.5', '2.5', 'Assumption; the high case comes from Ironman Mallorca'],
+    ['Rooms per athlete', '1', '1.25', '1.75', 'One room for every two people'],
     ['Room rate per night', '3,300 baht', '5,200 baht', '8,000 baht', '2026 athlete code list price'],
     ['Food per person per day, abroad / elsewhere in Thailand', '800 / 600 baht', '1,500 / 1,000 baht', '2,500 / 1,500 baht', 'Assumption from guide prices'],
-    ['Transport and bike, abroad / elsewhere in Thailand', '600 / 600 baht', '1,400 / 3,200 baht', '2,400 / 6,000 baht', 'Guide fares and the organiser bike truck price'],
-    ['Companions per athlete', '0.5', '1.0', '2.5', 'Assumption; the high case comes from Ironman Mallorca']
+    ['Transport and bike, abroad / elsewhere in Thailand', '600 / 600 baht', '1,400 / 3,200 baht', '2,400 / 6,000 baht', 'Guide fares and the organiser bike truck price']
   ];
   makeTable(document.getElementById('tb-inputs'), ['Input', 'Low', 'Middle', 'High', 'Label'], rows, 99);
 })();
