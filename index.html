@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Laguna Phuket Triathlon: what the race brings to the area</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a; --gray: #898781;
+  --link: #1c5cab; --note: rgba(42,120,214,0.09); --warn: rgba(235,104,52,0.11);
+  --hover: rgba(11,11,11,0.05); --tip-bg: #0b0b0b; --tip-ink: #f0efec;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --c1: #3987e5; --c2: #d95926; --c3: #199e70; --gray: #898781;
+    --link: #86b6ef; --note: rgba(57,135,229,0.14); --warn: rgba(217,89,38,0.16);
+    --hover: rgba(255,255,255,0.06); --tip-bg: #f0efec; --tip-ink: #0b0b0b;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem; line-height: 1.6; overflow-x: hidden;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 56px; }
+header.top { padding: 40px 0 8px; }
+h1 { font-size: clamp(1.7rem, 5.5vw, 2.5rem); line-height: 1.15; margin: 0 0 14px; font-weight: 650; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.3rem, 3.8vw, 1.65rem); line-height: 1.25; margin: 0 0 8px; font-weight: 650; }
+h3 { font-size: 1.1rem; margin: 28px 0 8px; font-weight: 650; }
+p { margin: 0 0 12px; }
+.lede { font-size: 1.1rem; color: var(--ink2); max-width: 46rem; }
+.asof { color: var(--ink2); font-size: 0.95rem; max-width: 46rem; }
+section { margin-top: 56px; }
+section > .intro { color: var(--ink2); max-width: 46rem; margin-bottom: 20px; }
+a { color: var(--link); text-underline-offset: 2px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; min-width: 0; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.tile .label { font-size: 0.95rem; color: var(--ink2); margin: 0 0 6px; }
+.tile .num { font-size: clamp(2rem, 7vw, 2.75rem); line-height: 1.1; font-weight: 650; letter-spacing: -0.01em; }
+.tile .unit { font-size: 1.1rem; font-weight: 500; color: var(--ink2); }
+.tile .desc { margin: 6px 0 8px; }
+.tile .small { font-size: 0.9rem; color: var(--ink2); margin: 0; }
+.badge { display: inline-block; font-size: 0.78rem; line-height: 1; padding: 5px 8px; border-radius: 99px; border: 1px solid var(--axis); color: var(--ink2); margin-bottom: 10px; letter-spacing: 0.02em; }
+.badge.est { border-color: var(--c2); background: var(--warn); color: var(--ink); }
+h2 .badge { margin: 0 0 0 10px; vertical-align: middle; }
+.chartbox { margin-top: 18px; }
+.chartbox h3 { margin-top: 0; }
+.cap { font-size: 0.92rem; color: var(--ink2); margin: 0 0 10px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 10px; padding: 0; list-style: none; font-size: 0.92rem; color: var(--ink2); }
+.legend li { display: flex; align-items: center; gap: 7px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.chart { width: 100%; min-width: 0; }
+.chart svg { display: block; max-width: 100%; }
+svg text { fill: var(--ink2); font-size: 12px; font-family: inherit; }
+svg text.val { fill: var(--ink); font-weight: 600; }
+svg .grid { stroke: var(--grid); stroke-width: 1; }
+svg .axis { stroke: var(--axis); stroke-width: 1; }
+svg .hit { fill: transparent; outline: none; cursor: default; }
+svg .hit:hover, svg .hit:focus-visible { fill: var(--hover); }
+svg .hit:focus-visible { stroke: var(--ink2); stroke-width: 1; }
+.c1 { fill: var(--c1); } .c2 { fill: var(--c2); } .c3 { fill: var(--c3); } .cg { fill: var(--gray); }
+.seg.hl { filter: brightness(1.14); }
+.s1 { background: var(--c1); } .s2 { background: var(--c2); } .s3 { background: var(--c3); } .sg { background: var(--gray); }
+.two { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width: 760px) { .two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 560px) { .tiles { gap: 18px; } }
+.btn { font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 8px; padding: 8px 14px; min-height: 40px; cursor: pointer; }
+.btn:hover { background: var(--hover); }
+.btn:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--c1); outline-offset: 2px; }
+.btn[aria-pressed="true"], .btn.on { background: var(--c1); border-color: var(--c1); color: #fff; }
+.toggle { margin-top: 12px; }
+.scroll { overflow-x: auto; max-width: 100%; margin-top: 12px; border: 1px solid var(--border); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--grid); }
+th { font-weight: 600; background: var(--hover); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+tr.marathon td { color: var(--ink2); }
+.mtag { display: inline-block; font-size: 0.75rem; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--c2); background: var(--warn); color: var(--ink); margin-left: 6px; white-space: nowrap; }
+.note { background: var(--note); border-left: 4px solid var(--c1); border-radius: 8px; padding: 14px 16px; margin: 20px 0; }
+.note p:last-child { margin-bottom: 0; }
+.note strong { font-weight: 650; }
+details { margin-top: 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+summary { cursor: pointer; padding: 11px 14px; font-weight: 600; font-size: 0.97rem; }
+details > div { padding: 0 14px 6px; }
+details ul, .plain { padding-left: 1.2rem; margin: 0 0 12px; }
+details li, .plain li { margin-bottom: 6px; }
+.stack > * + * { margin-top: 12px; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--tip-bg); color: var(--tip-ink); border-radius: 8px; padding: 9px 11px; font-size: 0.86rem; line-height: 1.4; max-width: 260px; box-shadow: 0 4px 16px rgba(0,0,0,0.25); display: none; }
+#tip .t { font-weight: 650; margin-bottom: 4px; }
+#tip .r { display: flex; align-items: center; gap: 8px; }
+#tip .r.hl { font-weight: 650; }
+#tip .ln { width: 14px; height: 3px; border-radius: 2px; flex: none; }
+#tip .v { font-weight: 650; min-width: 2.6em; }
+#tip .tot { border-top: 1px solid rgba(128,128,128,0.45); margin-top: 4px; padding-top: 4px; font-weight: 650; }
+/* calculator */
+.calc { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 12px; }
+.calc .res { order: -1; }
+@media (min-width: 860px) {
+  .calc { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+  .calc .res { order: 0; position: sticky; top: 12px; }
+}
+fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+legend { font-weight: 600; padding: 0; margin-bottom: 8px; font-size: 0.95rem; }
+.segrow { display: flex; flex-wrap: wrap; gap: 8px; }
+.srow { margin-bottom: 14px; }
+.srow .top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 0.93rem; }
+.srow output { font-weight: 650; white-space: nowrap; font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; margin: 6px 0 0; accent-color: var(--c1); min-height: 28px; }
+.big { font-size: clamp(1.9rem, 6vw, 2.5rem); font-weight: 650; line-height: 1.1; }
+.kv { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 10px 0 0; font-size: 0.95rem; }
+.kv dt { color: var(--ink2); } .kv dd { margin: 0; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.fixed { font-size: 0.9rem; color: var(--ink2); margin-top: 6px; }
+.stat { margin-top: 8px; color: var(--ink2); font-size: 0.9rem; }
+footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid); color: var(--ink2); font-size: 0.92rem; }
+.srcs h3 { font-size: 1rem; margin: 20px 0 6px; }
+.srcs ul { padding-left: 1.2rem; margin: 0; }
+.srcs li { margin-bottom: 4px; overflow-wrap: anywhere; }
+.facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width: 760px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.facts h3 { margin-top: 0; }
+@media (forced-colors: active) { .seg { stroke: CanvasText; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Laguna Phuket Triathlon: what the race brings to the area</h1>
+  <p class="lede">Counts from the official race results, published figures, and a spending estimate with its assumptions shown.</p>
+  <p class="asof">Data as of 9 November 2026. The 2026 race is on Sunday 15 November 2026 and is not included.</p>
+  <p class="asof">The full written report, with every source, is on its own page: <a href="report.html">Laguna Phuket Triathlon Economic Impact Report</a>.</p>
+
+  <div class="tiles">
+    <div class="card tile">
+      <span class="badge">Counted from official results</span>
+      <p class="label">Finishers, 2025</p>
+      <div class="num">557</div>
+      <p class="desc">finishers in the individual, sprint and duathlon races</p>
+      <p class="small">700 in 2019.</p>
+    </div>
+    <div class="card tile">
+      <span class="badge">Counted from official results</span>
+      <p class="label">Relay teams finished, 2025</p>
+      <div class="num">33</div>
+      <p class="desc">relay teams finished</p>
+      <p class="small">A team is not a person. The lists do not say how many people are on a team.</p>
+    </div>
+    <div class="card tile">
+      <span class="badge est">Estimate</span>
+      <p class="label">Estimated visitor spending, 2025</p>
+      <div class="num">About 27.3 million <span class="unit">baht</span></div>
+      <p class="desc">US$0.83 million, middle case</p>
+      <p class="small">Range 8.4 to 101.0 million baht.</p>
+    </div>
+    <div class="card tile">
+      <span class="badge">Counted from official results</span>
+      <p class="label">Recorded with a non-Thai country, 2025</p>
+      <div class="num">81%</div>
+      <p class="desc">of 2025 finishers (449 of 557)</p>
+      <p class="small">Country may be passport, not home. <a href="#country-note">See note.</a></p>
+    </div>
+  </div>
+</header>
+
+<!-- 3 -->
+<section id="people">
+  <h2>How many people race</h2>
+  <p class="intro">Each column is the number of people who finished the individual, sprint and duathlon races that year. Relay teams are in the second chart because a team is a different unit.</p>
+
+  <div class="card chartbox">
+    <h3>Finishers by event, 2017 to 2025 (people, counted)</h3>
+    <ul class="legend" id="lg-events"></ul>
+    <div class="chart" id="ch-events"></div>
+  </div>
+
+  <div class="card chartbox">
+    <h3>Relay teams finishing, 2017 to 2025 (teams, counted)</h3>
+    <p class="cap">Teams, not people. Not added to the chart above.</p>
+    <div class="chart" id="ch-relay"></div>
+  </div>
+
+  <p style="margin-top:16px">Press reports say "more than 1,000 triathletes" most years. The official results show 557 to 666 triathlon and duathlon finishers a year from 2022 to 2025, plus 22 to 33 relay teams.</p>
+
+  <button class="btn toggle" id="tg-events" aria-expanded="false" aria-controls="tb-events">Show table</button>
+  <div class="scroll" id="tb-events" hidden></div>
+
+  <details>
+    <summary>How this was worked out</summary>
+    <div>
+      <ul>
+        <li>The official results for 2017 to 2025 are on the timing company Sportstats, linked from the organiser's results page. Every list was pulled in full. The rows downloaded matched the site's own total in all 45 lists.</li>
+        <li>A finisher is anyone with a finish time and no did-not-finish or disqualified flag.</li>
+        <li>The event pages also show a larger "entrants" number that the lists do not explain. For the individual race it was 735 in 2022, 566 in 2023, 474 in 2024 and 436 in 2025. The extra names are probably registered athletes who did not start. That is an interpretation, because the site does not label the number.</li>
+        <li>The 2022 press figure of "more than 1,200 athletes" is roughly reachable from the entrant numbers. For 2025 it is not: individual, sprint and duathlon entrants totalled 705. In 2024, 1,000 is only reached by adding the 283 fun run finishers and the swimmers to the triathletes. None of the press figures say whether they count entrants, starters or finishers.</li>
+        <li>There was no race in 2021. The 2020 race went ahead under COVID rules, with only Thai-coded athletes in the results.</li>
+        <li>Relay lists show teams, not people.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- 4 -->
+<section id="countries">
+  <h2>Where athletes come from</h2>
+  <p class="intro">The recorded country of each finisher in the individual, sprint and duathlon races. The next note explains why this needs care.</p>
+
+  <div class="note" id="country-note">
+    <p><strong>Read this first.</strong> The results do not say whether the country is the athlete's passport or where they live. A British athlete who lives in Bang Tao may appear as Great Britain.</p>
+    <p>The way country was recorded appears to change from 2024. Thai-coded finishers in the individual race fell from 175 in 2023 to 64 in 2024, the year registration split into "Overseas" and "Thais &amp; Expats". Part of the shift in the chart below may be a recording change.</p>
+  </div>
+
+  <div class="card chartbox">
+    <h3>Finishers by recorded country, 2017 to 2025 (people, counted)</h3>
+    <ul class="legend" id="lg-country"></ul>
+    <div class="chart" id="ch-country"></div>
+    <p class="cap" style="margin-top:8px">2020 ran under COVID rules with only Thai-coded athletes in the results.</p>
+  </div>
+
+  <button class="btn toggle" id="tg-country" aria-expanded="false" aria-controls="tb-country">Show table</button>
+  <div class="scroll" id="tb-country" hidden></div>
+
+  <div class="two" style="margin-top:18px">
+    <div class="card chartbox" style="margin-top:0">
+      <h3>Top 10 countries, 2024 (finishers, counted)</h3>
+      <div class="chart" id="ch-top24"></div>
+    </div>
+    <div class="card chartbox" style="margin-top:0">
+      <h3>Top 10 countries, 2025 (finishers, counted)</h3>
+      <div class="chart" id="ch-top25"></div>
+    </div>
+  </div>
+
+  <details>
+    <summary>How this was worked out</summary>
+    <div>
+      <ul>
+        <li>Each result row carries a three-letter country code. Blank means the row has no code.</li>
+        <li>Two readings fit the numbers. In the first, Thai athletes stopped coming and foreign visitors replaced them. This fits the organiser's company saying that 2024 hotel revenue rose on more foreign visitors. In the second, the field was filled in differently from 2024. If foreigners living in Thailand were coded THA before 2024 and by passport after, the non-Thai share from 2024 includes Phuket residents.</li>
+        <li>The lists do not say which reading is right. The spending estimate below carries both readings into its low and high cases.</li>
+        <li>In 2023 the leading foreign sources in the individual race were Singapore (47) and Hong Kong (37). In 2024 and 2025 they were Great Britain, Australia and France.</li>
+        <li>Country counts in the press (30, 48, 51, or "30 and 65" in one 2024 article) are not consistent enough to use.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- 5 -->
+<section id="spending">
+  <h2>Estimated visitor spending <span class="badge est">Estimate</span></h2>
+  <p class="intro">This adds up what visiting athletes and the people with them spend on the race and their stay. No survey of this race's participants exists, so several inputs are assumptions. Each one is shown.</p>
+
+  <div class="card chartbox">
+    <h3>Visitor spending by year, 2022 to 2025 (million baht, estimate)</h3>
+    <p class="cap">Dot is the middle case. The bar runs from the low case to the high case. Athletes living in Phuket are not counted.</p>
+    <div class="chart" id="ch-range"></div>
+  </div>
+
+  <div class="scroll" id="tb-est"></div>
+
+  <div class="card chartbox">
+    <h3>2025 middle case by spending line (million baht, estimate)</h3>
+    <div class="chart" id="ch-lines"></div>
+    <p class="cap" style="margin-top:8px">Phuket-resident athletes' entry fees (0.48 million baht) are not included in these lines.</p>
+  </div>
+
+  <details>
+    <summary>How this was worked out</summary>
+    <div>
+      <ul>
+        <li><strong>Who is counted.</strong> People who started the individual, sprint and duathlon races (736, 670, 640 and 562 in 2022 to 2025), plus relay members. Relay starts were 24, 23, 24 and 33 teams. People per team is an assumption: 2 in the low case, 3 in the middle and high cases. Fun runs and open water swims are left out.</li>
+        <li><strong>Three groups.</strong> Athletes from abroad, athletes from elsewhere in Thailand, and athletes living in Phuket. Phuket residents add nothing to the total, because they have no hotel bill and their spending is local money moving around. Their entry fees are shown as a memo.</li>
+        <li><strong>Living in Thailand.</strong> For 2022 and 2023 this is the recorded Thai share plus 10% (low), 5% (middle) or 0% (high) of the non-Thai finishers. For 2024 and 2025 the low case holds the share at the 2023 level of 48.9%, the high case takes the recorded Thai share at face value, and the middle case is halfway between. This is the largest single source of uncertainty for 2024 and 2025.</li>
+        <li><strong>Living in Phuket.</strong> 50% (low), 35% (middle) or 20% (high) of those living in Thailand. This is an assumption. No source gives it.</li>
+        <li><strong>The 2025 middle case.</strong> 562 starters plus 33 relay teams at 3 people each gives 661 athletes. 34.2% live in Thailand: 226 people. That leaves 435 from abroad. Of the 226, 35% live in Phuket (79) and 147 come from elsewhere in Thailand.</li>
+        <li>An athlete from abroad spends 52,295 baht: entry fee 9,895, hotel 26,000 (5 nights at 5,200), food 7,500, transport 1,400, and one companion's food 7,500. An athlete from elsewhere in Thailand spends 30,844 baht. The total is 435 x 52,295 plus 147 x 30,844, which is 27,282,393 baht.</li>
+        <li><strong>Dollar amounts</strong> use yearly average rates from the Federal Reserve (<a href="https://fred.stlouisfed.org/series/AEXTHUS" target="_blank" rel="noopener">FRED AEXTHUS</a>): 35.0500 (2022), 34.7841 (2023), 35.2845 (2024) and 32.8619 (2025) baht per dollar.</li>
+        <li><strong>Low and high cases</strong> stack every low or every high input together. They are outer bounds. Most of the width comes from companions and nights.</li>
+        <li><strong>A check against visitor statistics.</strong> An athlete from abroad and one companion spend about 52,000 baht between them. The average international visitor to Phuket spent 37,440 baht per visit in 2024 (<a href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf" target="_blank" rel="noopener">C9 Hotelworks</a>, from Ministry of Tourism and Sports data).</li>
+        <li>The middle case barely moves from 2023 to 2025 even though the field shrank by about a tenth. More of the field is recorded as coming from abroad, and visitors from abroad spend more per head. If the 2024 change was only a change in recording, the low case is the closer one for 2024 and 2025.</li>
+      </ul>
+    </div>
+  </details>
+
+  <h3 id="calc-h">Try your own assumptions</h3>
+  <p class="cap">Pick a year and start from the low, middle or high case. Then move any slider. The preset buttons reproduce the table above.</p>
+
+  <div class="calc card" id="calc">
+    <div class="ctl">
+      <fieldset>
+        <legend>Year</legend>
+        <div class="segrow" id="c-year" role="group" aria-label="Year"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Start from</legend>
+        <div class="segrow" id="c-preset" role="group" aria-label="Preset"></div>
+        <p class="stat" id="c-state"></p>
+      </fieldset>
+      <div id="c-sliders"></div>
+      <fieldset>
+        <legend>People per relay team</legend>
+        <div class="segrow" id="c-team" role="group" aria-label="People per relay team"></div>
+      </fieldset>
+      <p class="fixed" id="c-fixed"></p>
+    </div>
+    <div class="res" role="status" aria-live="polite">
+      <div class="card" style="background:var(--page)">
+        <p class="cap" style="margin:0 0 4px">Estimated visitor spending</p>
+        <div class="big" id="r-total"></div>
+        <p style="margin:4px 0 0" id="r-usd"></p>
+        <h3 style="font-size:0.98rem;margin:18px 0 0">Athletes counted</h3>
+        <dl class="kv" id="r-ath"></dl>
+        <h3 style="font-size:0.98rem;margin:18px 0 0">Spending lines (million baht)</h3>
+        <dl class="kv" id="r-lines"></dl>
+        <p class="stat" id="r-memo"></p>
+      </div>
+    </div>
+  </div>
+
+  <details>
+    <summary>All inputs by case</summary>
+    <div class="scroll" style="margin:0 0 12px" id="tb-inputs"></div>
+  </details>
+
+  <h3>What this estimate leaves out</h3>
+  <ul class="plain">
+    <li>No multiplier is applied. Only first-round spending is counted, not the wages and supplier purchases that follow. No sourced multiplier for Phuket was found.</li>
+    <li>November is the start of Phuket's high season, so some hotel nights may have replaced guests who would have stayed anyway. No November occupancy figure was found.</li>
+    <li>There is no survey of this race's participants. Stay length, party size and spending are borrowed or assumed.</li>
+    <li>Spectators, athletes who paid but did not start, fun run and swim visitors, and training camps before the race are not counted.</li>
+    <li>Entry fees go to the organiser, which pays the race's costs out of them. Those costs are not published.</li>
+    <li>Some foreign athletes may have been in Phuket on holiday regardless, and the estimate counts their whole stay. Some of the bike truck money is spent outside Phuket.</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section id="published">
+  <h2>Figures the organiser has published</h2>
+  <p class="intro">No independent study of this race's economic impact was found, in English or Thai. The published figures below are forward-looking projections, not measured results.</p>
+  <div class="scroll" id="tb-pub"></div>
+  <p style="margin-top:16px">The estimate above is lower because the organiser assumed more than 1,100 athletes and three to five companions each. The results lists show 661 athletes in 2025 in the events counted, and with four companions and 1,100 athletes the same method as the estimate above gives about 98 million baht.</p>
+</section>
+
+<!-- 7 -->
+<section id="money">
+  <h2>Who receives the money</h2>
+  <p class="intro">Laguna Resorts &amp; Hotels (about 86.28% held by Banyan Group) organises the race. It owns four of the six race hotels.</p>
+
+  <div class="scroll"><table>
+    <thead><tr><th>Who</th><th>Businesses</th></tr></thead>
+    <tbody>
+      <tr><td>Owned by Laguna Resorts &amp; Hotels</td><td>Angsana, Banyan Tree Phuket, Cassia, HOMM Suites (about 983 rooms)</td></tr>
+      <tr><td>Owned separately</td><td>Dusit Thani Laguna Phuket (sold to Dusit Thani PCL in 2010). SAii Laguna Phuket (sold to Singha Estate in 2018; the current owner was not checked).</td></tr>
+      <tr><td>Independent</td><td>Boat Avenue, villas and condos rented to athletes, Bang Tao guesthouses and restaurants</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="card chartbox">
+    <h3>Laguna Resorts &amp; Hotels revenue, 2019 and 2022 to 2025 (million baht, from audited statements)</h3>
+    <p class="cap">Both charts use the same scale. Hotel operations include businesses outside Phuket, such as Banyan Tree Bangkok and Laguna Golf Bintan. The filings do not split Phuket out.</p>
+    <div class="two">
+      <div><h3 style="font-size:1rem;margin:0 0 6px">Hotel operations (hotels, golf, retail)</h3><div class="chart" id="ch-rev1"></div></div>
+      <div><h3 style="font-size:1rem;margin:0 0 6px">Property development</h3><div class="chart" id="ch-rev2"></div></div>
+    </div>
+  </div>
+
+  <p style="margin-top:16px">For scale, the 2025 middle-case estimate (27.3 million baht) equals about 0.7% of the company's hotel revenue that year, and only part of it reaches the company.</p>
+
+  <button class="btn toggle" id="tg-rev" aria-expanded="false" aria-controls="tb-rev">Show table</button>
+  <div class="scroll" id="tb-rev" hidden></div>
+
+  <details>
+    <summary>How this was worked out</summary>
+    <div>
+      <ul>
+        <li>The figures come from the company's audited statements for 2019, 2022 and 2023, 2024 and 2025. The 2024 total includes 517 million baht of insurance income.</li>
+        <li>In 2025, selling homes overtook running hotels for the first time.</li>
+        <li>None of the company's results announcements mention the triathlon.</li>
+        <li>The race was created in 1994 by IMG with Laguna to promote the resort. The 2025 booklet lists Laguna as organiser, GAA Events as co-organiser, and Laguna staff as volunteers.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- 8 -->
+<section id="morning">
+  <h2>Race morning and giving back</h2>
+  <p class="intro">What was published about road closures and charity. Details are from the organiser's own notices and booklet.</p>
+  <div class="facts">
+    <div class="card">
+      <h3>Road closures (2023 notice)</h3>
+      <ul class="plain">
+        <li>Laguna roads and Lagoon Road were closed from 6:30 am to 11:00 am on race morning.</li>
+        <li>Public roads were closed from about 5:30 am to 11:00 am. The listed roads and villages are Road 4030 to Bandon Market, the Road 402 motorbike lane, Road 3029, the Airport Road (4026), the Old Airport Road (4031), Road 4018, Nai Thon and Layan, and village roads in Prusompan, Pruchampa, Nop Pring, Pak Plee, Koktanod and Ban Sakoo.</li>
+        <li>The notice warned of 30 minutes of extra travel.</li>
+        <li>A practice-morning closure was set for the Friday, 7:00 am to 11:00 am.</li>
+        <li>No notices were found for 2024, 2025 or 2026.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Charity</h3>
+      <ul class="plain">
+        <li>The Children First Fund, set up in 2017, supplies food every month to four orphanages with more than 200 children (2025 booklet).</li>
+        <li>1,000,000 baht went to the Kao Project in 2017.</li>
+        <li>More than 250,000 baht was raised by the 2018 sprint (seen in a search summary only).</li>
+        <li>No donation totals were found for 2020 to 2025.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:16px">No resident complaints were found in the sources that could be read. Several local news and forum sites could not be opened, so this is not proof that none exist.</p>
+</section>
+
+<!-- 9 -->
+<section id="missing">
+  <h2>What could not be found</h2>
+  <ul class="plain" id="missing-list"></ul>
+</section>
+
+<!-- 10 -->
+<section id="sources">
+  <h2>Sources</h2>
+  <div class="srcs" id="src-list"></div>
+</section>
+
+<footer>
+  <p>Prepared 9 November 2026 from public sources. Estimates are labelled as estimates. The full written report is on its own page: <a href="report.html">Laguna Phuket Triathlon Economic Impact Report</a>.</p>
+</footer>
+
+</div>
+<div id="tip" role="tooltip"></div>
+
+<script>
+(function () {
+'use strict';
+
+/*CALC-START*/
+var YEARDATA = {
+  2022: { starters: 736, relay: 24, rate: 35.0500 },
+  2023: { starters: 670, relay: 23, rate: 34.7841 },
+  2024: { starters: 640, relay: 24, rate: 35.2845 },
+  2025: { starters: 562, relay: 33, rate: 32.8619 }
+};
+var TH_SHARE = {
+  low:  { 2022: 76.9, 2023: 54.1, 2024: 48.9, 2025: 48.9 },
+  mid:  { 2022: 75.6, 2023: 51.5, 2024: 35.1, 2025: 34.2 },
+  high: { 2022: 74.3, 2023: 48.9, 2024: 21.2, 2025: 19.4 }
+};
+var PRESETS = {
+  low:  { phShare: 50, entryUSD: 269.58, entryTHB: 4275, nA: 3, nD: 2, roomsPer: 0.75, roomRate: 3300, foodA: 800,  foodD: 600,  transA: 600,  transD: 600,  comp: 0.5, perTeam: 2 },
+  mid:  { phShare: 35, entryUSD: 301.10, entryTHB: 6044, nA: 5, nD: 3, roomsPer: 1,    roomRate: 5200, foodA: 1500, foodD: 1000, transA: 1400, transD: 3200, comp: 1.0, perTeam: 3 },
+  high: { phShare: 20, entryUSD: 320.67, entryTHB: 6957, nA: 7, nD: 4, roomsPer: 1,    roomRate: 8000, foodA: 2500, foodD: 1500, transA: 2400, transD: 6000, comp: 2.5, perTeam: 3 }
+};
+function estimate(year, p) {
+  var y = YEARDATA[year];
+  var athletes = y.starters + y.relay * p.perTeam;
+  var living = Math.round(athletes * p.thShare / 100);
+  var phuket = Math.round(living * p.phShare / 100);
+  var domestic = living - phuket;
+  var abroad = athletes - living;
+  var rooms = p.roomsPer + Math.max(0, p.comp - 1) * 0.5;
+  var entryAbroad = Math.round(p.entryUSD * y.rate);
+  var perAbroad = entryAbroad + p.nA * rooms * p.roomRate + p.nA * p.foodA + p.transA + p.comp * p.nA * p.foodA;
+  var perDomestic = p.entryTHB + p.nD * rooms * p.roomRate + p.nD * p.foodD + p.transD + p.comp * p.nD * p.foodD;
+  var lines = {
+    accommodation: abroad * p.nA * rooms * p.roomRate + domestic * p.nD * rooms * p.roomRate,
+    entry: abroad * entryAbroad + domestic * p.entryTHB,
+    food: abroad * p.nA * p.foodA + domestic * p.nD * p.foodD,
+    companions: abroad * p.comp * p.nA * p.foodA + domestic * p.comp * p.nD * p.foodD,
+    transport: abroad * p.transA + domestic * p.transD
+  };
+  return {
+    athletes: athletes, living: living, phuket: phuket, domestic: domestic, abroad: abroad,
+    perAbroad: perAbroad, perDomestic: perDomestic, lines: lines,
+    phuketEntry: phuket * p.entryTHB,
+    total: abroad * perAbroad + domestic * perDomestic,
+    rate: y.rate
+  };
+}
+function presetFor(name, year) {
+  var p = {}; var src = PRESETS[name];
+  for (var k in src) p[k] = src[k];
+  p.thShare = TH_SHARE[name][year];
+  return p;
+}
+/*CALC-END*/
+
+/* ---------- data ---------- */
+var YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+var NA = 'n/a';
+var EVENT_ROWS = [
+  [2017, '19 Nov', 491, NA, NA, 491, 29, 396, 519, NA, NA, NA],
+  [2018, '18 Nov', 511, 197, NA, 708, 32, 516, 660, 102, NA, NA],
+  [2019, '24 Nov', 537, 163, NA, 700, 24, 306, 513, 104, NA, NA],
+  [2020, '22 Nov', 274, 109, 48, 431, 11, NA, NA, NA, 'no list', NA],
+  [2021, 'not held'],
+  [2022, '20 Nov', 445, 175, 46, 666, 22, NA, NA, NA, 'no list', NA],
+  [2023, '19 Nov', 414, 172, 40, 626, 22, NA, NA, NA, 'no list', NA],
+  [2024, '17 Nov', 374, 211, 21, 606, 23, NA, NA, NA, 283, 104],
+  [2025, '23 Nov', 347, 189, 21, 557, 33, NA, NA, NA, 'no list', 85],
+  [2026, '15 Nov', 'not yet run']
+];
+var EVENT_HEAD = ['Year', 'Race date', 'Individual', 'Sprint', 'Duathlon', 'Individual + sprint + duathlon', 'Relay teams (teams)', '10 km run', '5 km run', 'Kids 2 km', 'Fun run', 'Open water swims (individual)'];
+var COUNTRY_ROWS = [
+  [2017, 491, 223, 182, 86, '55%'],
+  [2018, 708, 334, 283, 91, '54%'],
+  [2019, 700, 401, 230, 69, '64%'],
+  [2020, 431, 405, 0, 26, '100%'],
+  [2022, 666, 454, 157, 55, '74%'],
+  [2023, 626, 302, 315, 9, '49%'],
+  [2024, 606, 128, 476, 2, '21%'],
+  [2025, 557, 108, 449, 0, '19%']
+];
+var TOP24 = [['Thailand', 128], ['Great Britain', 90], ['Australia', 50], ['France', 37], ['United States', 35], ['Germany', 31], ['Russia', 29], ['Italy', 23], ['Switzerland', 16], ['Netherlands', 15]];
+var TOP25 = [['Great Britain', 108], ['Thailand', 108], ['Australia', 47], ['France', 31], ['Russia', 30], ['Germany', 24], ['Netherlands', 22], ['United States', 20], ['Italy', 17], ['Malaysia', 14]];
+var EST = [
+  { y: 2022, ath: 808, split: '197 / 397 / 214', lo: 7.3, mid: 22.7, hi: 79.1, ulo: '0.21', umid: '0.65', uhi: '2.26' },
+  { y: 2023, ath: 739, split: '358 / 247 / 133', lo: 9.2, mid: 26.6, hi: 91.2, ulo: '0.26', umid: '0.76', uhi: '2.62' },
+  { y: 2024, ath: 712, split: '462 / 162 / 87', lo: 9.4, mid: 29.5, hi: 107.9, ulo: '0.27', umid: '0.84', uhi: '3.06' },
+  { y: 2025, ath: 661, split: '435 / 147 / 79', lo: 8.4, mid: 27.3, hi: 101.0, ulo: '0.25', umid: '0.83', uhi: '3.07' }
+];
+var LINES25 = [['Accommodation', 13.60], ['Entry fees', 5.19], ['Food and local spending', 3.70], ['Companions', 3.70], ['Transport and bike', 1.08]];
+var PUB = [
+  ['More than 74 million baht tourism spending in Phuket', 'Triathlon, about 2016', 'Laguna Phuket (organiser)', 'Press release titled for the 2017 date', 'Projection', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/', 'lagunaphukettri.com', false],
+  ['About 9 million baht hotel room and food revenue inside Laguna', 'Triathlon race weekend, about 2016', 'Laguna Phuket', 'Same release', 'Projection', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/', 'lagunaphukettri.com', false],
+  ['Over 90 million baht tourism spending', 'Laguna Tri-Fest week 2015 (triathlon plus Challenge race)', 'Prapa Hemmin, Laguna Phuket', '12 Oct 2015', 'Projection', 'https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers', 'Thaiger', false],
+  ['"Stimulating the local economy" (no figure)', 'Triathlon 2025', 'Welcome attributed to the Governor of Phuket', 'Nov 2025', 'Statement', 'https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf', 'LPT 2025 booklet', false],
+  ['Over 3,000 spectators', 'Triathlon 2025', 'Organiser', 'Nov 2025', 'Estimate', 'https://www.lagunaphukettri.com/phuket-thailand-gears-up-for-the-31st-laguna-phuket-triathlon/', 'LPT 31st preview', false],
+  ['215 million baht', 'Marathon 2017', 'Article citing Frost & Sullivan', '7 Nov 2017', 'Estimate', 'https://www.paulpoole.co.th/edm/nov17/sport-tourism-on-phuket.html', 'Paul Poole', true],
+  ['146.8 million baht', 'Marathon 2018', 'Unnamed independent study', '14 Mar 2019', 'Study, unseen', 'https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/', 'endurance.biz', true]
+];
+var REV = [
+  [2019, 3356.3, 2568.2, 6157.8, 358.2, 198.4],
+  [2022, 2398.0, 2314.1, 4796.7, 5.3, 136.9],
+  [2023, 3700.6, 2263.0, 6116.6, 375.7, 175.8],
+  [2024, 4152.5, 2686.7, 7593.8, 1290.5, 215.2],
+  [2025, 3915.0, 4971.2, 9326.9, 2016.7, 283.8]
+];
+var MISSING = [
+  'Any survey of Laguna Phuket Triathlon participants (residence, stay, party size, spending)',
+  'Whether the results country field is passport or residence, and why it changed after 2023',
+  'Any independent or measured economic impact of the triathlon; any figure after about 2016',
+  'A sourced spending multiplier for Phuket',
+  'Entry fees for 2022 to 2025; sprint, swim and fun run fees for any year',
+  'Relay team sizes; the meaning of the "entrants" figure on event pages',
+  'Fun run lists for 2020, 2022, 2023 and 2025',
+  'November occupancy and room rates for Phuket; Bang Tao rates outside Laguna hotels',
+  'Race costs, race-week hotel revenue and occupancy at Laguna',
+  'Charity totals for the triathlon after 2019',
+  'Local jobs, vendors and volunteer numbers',
+  'Road closure notices for 2024, 2025 and 2026',
+  'Any resident, villa-owner or community complaint (several local news and forum sites could not be read)',
+  '2026 entry numbers (the race is on 15 Nov 2026, after the research date)'
+];
+var SOURCES = [
+  ['Official results', [
+    ['Laguna Phuket Triathlon results page', 'https://www.lagunaphukettri.com/results/'],
+    ['2024 individual leaderboard (Sportstats)', 'https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141771'],
+    ['2024 relay list (Sportstats)', 'https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141772']
+  ]],
+  ['Organiser pages', [
+    ['2017 date announcement and impact projection', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/'],
+    ['2025 race booklet', 'https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf'],
+    ['31st race preview (spectator estimate)', 'https://www.lagunaphukettri.com/phuket-thailand-gears-up-for-the-31st-laguna-phuket-triathlon/'],
+    ['2026 early bird release', 'https://www.lagunaphukettri.com/embrace-the-challenge-early-bird-registration-for-the-32nd-laguna-phuket-triathlon-is-open-until-31st-may-2026/'],
+    ['Individual entry page', 'https://www.lagunaphukettri.com/lpt-individual/'],
+    ['Duathlon entry page', 'https://www.lagunaphukettri.com/duathlon/'],
+    ['Accommodation page', 'https://lagunaphukettri.com/accommodation'],
+    ['Bike transport page', 'https://lagunaphukettri.com/?p=4603'],
+    ['2023 road closure flyer', 'https://www.lagunaphukettri.com/wp-content/uploads/2023/11/LPT23-Road-Closure-Flyer-ENG-Compressed.pdf'],
+    ['2017 race and good causes', 'https://www.lagunaphukettri.com/2017-laguna-phuket-triathlon-kicks-high-gear-towards-good-causes/'],
+    ['2018 sprint charity (search summary only)', 'https://www.lagunaphukettri.com/?p=4538'],
+    ['2020 race', 'https://www.lagunaphukettri.com/?p=4559'],
+    ['Laguna Phuket fact sheet, February 2025', 'https://lagunaphukettri.com/wp-content/uploads/2025/02/Laguna-Phuket-fact-sheet-EN-version-Feb-2025.pdf'],
+    ['Overseas registration page, 2024', 'https://www.active.com/cherntalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-overseas-2024'],
+    ['Thais & Expats registration page, 2024', 'https://www.active.com/cherngtalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-thais-and-expats-2024']
+  ]],
+  ['Company filings', [
+    ['Laguna Resorts & Hotels 2019 audited statements', 'https://links.sgx.com/1.0.0/corporate-announcements/1X38Y0OWGDAH2YWD/597799_4-LRH_2019%20FS_E.pdf'],
+    ['2022 and 2023 audited statements', 'https://links.sgx.com/1.0.0/corporate-announcements/2PKMGLHQP674R2ML/787239_4.%20LRH_2023%20FS_E.pdf'],
+    ['2024 audited statements', 'https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833473_4.LRH_2024%20FS_E.pdf'],
+    ['2025 audited statements', 'https://www.groupbanyan.com/sites/btg/files/2026-02/4_LRH_2025_FS_E.pdf'],
+    ['2024 results explanation', 'https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833471_2.Explanation%20of%20operating%20results%20Q4-2024_MD-A_E.pdf'],
+    ['Q2 2026 results', 'https://groupbanyan.com/sites/btg/files/2026-08/26-26_SGX_11%20Aug%202026_LRH-Q22026%20Results%20_full%20set.pdf'],
+    ['Banyan Tree Holdings delisting notice, 1 Sep 2026', 'https://groupbanyan.com/sites/btg/files/2026-09/29-26_Banyan%20Tree%20Holdings%20Limited%20-%20Delisting%20of%20LRH_full%20set.pdf']
+  ]],
+  ['Market reports and reference prices', [
+    ['C9 Hotelworks, Phuket Hotel and Tourism Market Review, February 2025', 'https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf'],
+    ['Federal Reserve yearly average exchange rates (FRED AEXTHUS)', 'https://fred.stlouisfed.org/series/AEXTHUS'],
+    ['Majorca Daily Bulletin, Ironman Mallorca, 2022', 'https://majorcadailybulletin.com/news/local/2022/05/13/101167/sport-event-mallorca-ironman.html'],
+    ['Phuket Expat Guide, Bang Tao restaurants', 'https://phuketexpatguide.com/blog/food-restaurants-bang-tao-cherng-talay/'],
+    ['The Phuket News, high season outlook', 'https://www.thephuketnews.com/phuket-upbeat-on-high-season-outlook-98481.php'],
+    ['Wikivoyage, Bang Tao (February 2025 copy)', 'https://kwx.liehendr.com/content/wikivoyage_en_all_maxi_2025-02/A/Bang_Tao'],
+    ['thetraveler.org, airport transfers', 'https://www.thetraveler.org/how-to-get-from-phuket-airport-to-diamond-resort-phuket/']
+  ]],
+  ['News', [
+    ['TTR Weekly, January 2021', 'https://ttrweekly.com/site/2021/01/laguna-phuket-names-triathlon-dates'],
+    ['TTR Weekly, September 2022', 'https://ttrweekly.com/site/2022/09/laguna-phuket-triathlon-is-back'],
+    ['TTR Weekly, November 2022', 'https://ttrweekly.com/site/2022/11/phuket-triathlon-is-back-to-winning-ways'],
+    ['Laguna Phuket, 2023', 'https://www.lagunaphuket.com/?p=7665'],
+    ['Pattaya Mail, 2024', 'https://www.pattayamail.com/travel/wilde-times-in-phuket-kiwi-superstar-dominates-iconic-triathlon-481164'],
+    ['Laguna Phuket Tri, 2025 race report', 'https://www.lagunaphukettri.com/tayler-reid-and-georgia-taylor-brown-storm-to-victory-as-the-31st-laguna-phuket-triathlonrace-of-legends-concludes-in-spectacular-fashion-thai-athletes-shine-on-home-soil/'],
+    ['Thaiger, 12 October 2015', 'https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers'],
+    ['Thaiger, 18 November 2018, road closures', 'https://thethaiger.com/news/phuket/laguna-phuket-triathlon-road-closures-2'],
+    ['Thaiger, 2010, Dusit Thani sale', 'https://thethaiger.com/news/phuket/Laguna-Phuket-sells-Dusit-Thani-Bt262b'],
+    ['Travel Weekly, Outrigger sells six resorts', 'https://www.travelweekly.com/Travel-News/Hotel-News/Outrigger-sells-six-resorts-continues-to-run-them'],
+    ['The Phuket News, 2019, charity partners', 'https://mail.thephuketnews.com/laguna-phuket-triathlon-doubles-down-on-good-causes-two-charity-partners-unveiled-72751.php'],
+    ['Paul Poole, November 2017, sport tourism', 'https://www.paulpoole.co.th/edm/nov17/sport-tourism-on-phuket.html'],
+    ['endurance.biz, Laguna Phuket Marathon, 2019', 'https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/'],
+    ['The Nation, 2026, marathon field', 'https://www.nationthailand.com/news/tourism/40067436'],
+    ['Wikipedia, Laguna Phuket Triathlon', 'https://en.wikipedia.org/wiki/Laguna_Phuket_Triathlon']
+  ]]
+];
+
+/* ---------- helpers ---------- */
+var NS = 'http://www.w3.org/2000/svg';
+function S(tag, attrs, parent, text) {
+  var e = document.createElementNS(NS, tag);
+  for (var a in attrs) { e.setAttribute(a, attrs[a]); }
+  if (text != null) { e.textContent = text; }
+  if (parent) { parent.appendChild(e); }
+  return e;
+}
+function H(tag, cls, text, parent) {
+  var e = document.createElement(tag);
+  if (cls) { e.className = cls; }
+  if (text != null) { e.textContent = text; }
+  if (parent) { parent.appendChild(e); }
+  return e;
+}
+function num(n) { return Number(n).toLocaleString('en-US'); }
+function fix(n, d) { return Number(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+
+function mount(host, draw) {
+  var last = 0;
+  function go() {
+    var w = Math.floor(host.clientWidth);
+    if (w < 80 || w === last) { return; }
+    last = w; draw(host, w);
+  }
+  if (typeof ResizeObserver !== 'undefined') { new ResizeObserver(go).observe(host); }
+  else { window.addEventListener('resize', go); }
+  go();
+}
+
+function makeTable(host, head, rows, numFrom) {
+  host.textContent = '';
+  var t = H('table', null, null, host);
+  var thead = H('thead', null, null, t); var tr = H('tr', null, null, thead);
+  head.forEach(function (h, i) { var th = H('th', i >= numFrom ? 'n' : '', h, tr); th.scope = 'col'; });
+  var tb = H('tbody', null, null, t);
+  rows.forEach(function (r0) {
+    var r = r0.slice(); while (r.length < head.length) { r.push(''); }
+    var row = H('tr', null, null, tb);
+    r.forEach(function (c, i) {
+      var td = H(i === 0 ? 'th' : 'td', i >= numFrom ? 'n' : '', String(c), row);
+      if (i === 0) { td.scope = 'row'; td.style.background = 'transparent'; td.style.fontWeight = '600'; }
+    });
+  });
+}
+function toggle(btnId, boxId, build) {
+  var b = document.getElementById(btnId), box = document.getElementById(boxId);
+  build(box);
+  b.addEventListener('click', function () {
+    var open = box.hidden;
+    box.hidden = !open;
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.textContent = open ? 'Hide table' : 'Show table';
+  });
+}
+
+/* ---------- tooltip ---------- */
+var tip = document.getElementById('tip');
+function showTip(rows, title, total, x, y) {
+  tip.textContent = '';
+  H('div', 't', title, tip);
+  rows.forEach(function (r) {
+    var d = H('div', 'r' + (r.hl ? ' hl' : ''), null, tip);
+    if (r.color) { var ln = H('span', 'ln', null, d); ln.style.background = r.color; }
+    H('span', 'v', r.value, d);
+    H('span', null, r.label, d);
+  });
+  if (total != null) { H('div', 'tot', total, tip); }
+  tip.style.display = 'block';
+  var tw = tip.offsetWidth, th = tip.offsetHeight;
+  var left = x + 14, top = y + 14;
+  if (left + tw > window.innerWidth - 8) { left = x - tw - 14; }
+  if (left < 8) { left = 8; }
+  if (top + th > window.innerHeight - 8) { top = y - th - 14; }
+  if (top < 8) { top = 8; }
+  tip.style.left = left + 'px'; tip.style.top = top + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+document.addEventListener('pointerdown', function (e) { if (!e.target.closest || !e.target.closest('svg')) { hideTip(); } });
+document.addEventListener('scroll', hideTip, true);
+
+function legend(id, items) {
+  var ul = document.getElementById(id);
+  items.forEach(function (it) { var li = H('li', null, null, ul); H('i', it.sw, null, li); H('span', null, it.label, li); });
+}
+
+/* ---------- shapes ---------- */
+function topRounded(x, y, w, h, r) {
+  r = Math.min(r, h, w / 2);
+  return 'M' + x + ',' + (y + h) + 'L' + x + ',' + (y + r) + 'Q' + x + ',' + y + ' ' + (x + r) + ',' + y + 'L' + (x + w - r) + ',' + y + 'Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) + 'L' + (x + w) + ',' + (y + h) + 'Z';
+}
+function rightRounded(x, y, w, h, r) {
+  r = Math.min(r, w, h / 2);
+  return 'M' + x + ',' + y + 'L' + (x + w - r) + ',' + y + 'Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) + 'L' + (x + w) + ',' + (y + h - r) + 'Q' + (x + w) + ',' + (y + h) + ' ' + (x + w - r) + ',' + (y + h) + 'L' + x + ',' + (y + h) + 'Z';
+}
+
+/* ---------- stacked / single column chart ---------- */
+function columnChart(host, cfg, w) {
+  host.textContent = '';
+  var h = cfg.h || (w < 480 ? 270 : 330);
+  var m = { l: cfg.ml || 40, r: 6, t: 24, b: 28 };
+  var svg = S('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-label': cfg.aria }, host);
+  var pw = w - m.l - m.r, ph = h - m.t - m.b;
+  function Y(v) { return m.t + ph - (v / cfg.max) * ph; }
+  cfg.ticks.forEach(function (t) {
+    S('line', { 'class': t === 0 ? 'axis' : 'grid', x1: m.l, x2: w - m.r, y1: Y(t), y2: Y(t) }, svg);
+    S('text', { x: m.l - 6, y: Y(t) + 4, 'text-anchor': 'end' }, svg, num(t));
+  });
+  var n = cfg.cats.length, band = pw / n, bw = Math.min(36, band * 0.62);
+  var fs = w < 480 ? 10 : 12;
+  cfg.cats.forEach(function (c, i) {
+    var cx = m.l + band * i + band / 2;
+    var d = cfg.data[c];
+    S('text', { x: cx, y: h - 8, 'text-anchor': 'middle', 'font-size': fs }, svg, String(c));
+    var hit = S('rect', { 'class': 'hit', x: m.l + band * i, y: m.t - 4, width: band, height: ph + 4, tabindex: 0, role: 'img' }, svg);
+    if (!d) {
+      S('text', { x: cx, y: Y(0) - 22, 'text-anchor': 'middle', 'font-size': fs - 1 }, svg, 'not');
+      S('text', { x: cx, y: Y(0) - 9, 'text-anchor': 'middle', 'font-size': fs - 1 }, svg, 'held');
+      hit.setAttribute('aria-label', c + ': not held');
+      var nh = function (e) { showTip([], c + ': not held', null, e.clientX, e.clientY); };
+      hit.addEventListener('pointermove', nh); hit.addEventListener('pointerleave', hideTip);
+      hit.addEventListener('focus', function () { var b = hit.getBoundingClientRect(); showTip([], c + ': not held', null, b.left + b.width / 2, b.top + 20); });
+      hit.addEventListener('blur', hideTip);
+      return;
+    }
+    var total = 0, segs = [], acc = 0;
+    var present = cfg.series.filter(function (s) { return typeof d[s.id] === 'number' && d[s.id] > 0; });
+    cfg.series.forEach(function (s) { if (typeof d[s.id] === 'number') { total += d[s.id]; } });
+    present.forEach(function (s, k) {
+      var v = d[s.id], y1 = Y(acc), y0 = Y(acc + v);
+      var isTop = k === present.length - 1;
+      var gap = k === 0 ? 0 : 1;
+      var yTop = y0, hh = (y1 - y0) - gap;
+      if (hh < 1) { hh = 1; }
+      var el;
+      if (isTop) { el = S('path', { 'class': 'seg ' + s.cls, d: topRounded(cx - bw / 2, yTop, bw, hh, 4) }, svg); }
+      else { el = S('rect', { 'class': 'seg ' + s.cls, x: cx - bw / 2, y: yTop, width: bw, height: hh }, svg); }
+      segs.push({ id: s.id, y0: y0, y1: y1, el: el });
+      acc += v;
+    });
+    S('text', { x: cx, y: Y(total) - 6, 'text-anchor': 'middle', 'class': 'val', 'font-size': fs }, svg, cfg.labelFmt ? cfg.labelFmt(total) : num(total));
+    function rows(hlId) {
+      return cfg.series.map(function (s) {
+        var v = d[s.id];
+        return { color: s.color, label: s.label, value: typeof v === 'number' ? (cfg.valFmt ? cfg.valFmt(v) : num(v)) : 'none listed', hl: s.id === hlId };
+      });
+    }
+    var totalText = cfg.totalLabel + ': ' + (cfg.labelFmt ? cfg.labelFmt(total) : num(total)) + (cfg.extra ? cfg.extra(c) : '');
+    var desc = c + '. ' + cfg.series.map(function (s) { var v = d[s.id]; return s.label + ' ' + (typeof v === 'number' ? v : 'none listed'); }).join(', ') + '. ' + totalText;
+    hit.setAttribute('aria-label', desc);
+    function clear() { segs.forEach(function (s) { s.el.classList.remove('hl'); }); }
+    hit.addEventListener('pointermove', function (e) {
+      var r = svg.getBoundingClientRect(), py = e.clientY - r.top, hl = null;
+      segs.forEach(function (s) { s.el.classList.remove('hl'); if (py >= s.y0 && py <= s.y1) { hl = s.id; s.el.classList.add('hl'); } });
+      showTip(rows(hl), String(c), totalText, e.clientX, e.clientY);
+    });
+    hit.addEventListener('pointerleave', function () { clear(); hideTip(); });
+    hit.addEventListener('focus', function () { var b = hit.getBoundingClientRect(); showTip(rows(null), String(c), totalText, b.left + b.width / 2, b.top + 30); });
+    hit.addEventListener('blur', hideTip);
+  });
+}
+
+/* ---------- horizontal bars ---------- */
+function barsChart(host, cfg, w) {
+  host.textContent = '';
+  var rowH = cfg.rowH || 30;
+  var labelW = Math.min(150, Math.max(96, w * 0.38));
+  var barMax = Math.max(40, w - labelW - 62);
+  var h = rowH * cfg.items.length + 8;
+  var svg = S('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-label': cfg.aria }, host);
+  S('line', { 'class': 'axis', x1: labelW, x2: labelW, y1: 2, y2: h - 4 }, svg);
+  var maxChars = Math.floor((labelW - 10) / 6.4);
+  cfg.items.forEach(function (it, i) {
+    var cy = 4 + rowH * i + rowH / 2;
+    var words = it[0].split(' '), l1 = it[0], l2 = null;
+    if (it[0].length > maxChars) {
+      l1 = ''; var j = 0;
+      while (j < words.length && (l1 + ' ' + words[j]).trim().length <= maxChars) { l1 = (l1 + ' ' + words[j]).trim(); j++; }
+      l2 = words.slice(j).join(' ');
+    }
+    if (l2) {
+      S('text', { x: labelW - 8, y: cy - 4, 'text-anchor': 'end' }, svg, l1);
+      S('text', { x: labelW - 8, y: cy + 10, 'text-anchor': 'end' }, svg, l2);
+    } else { S('text', { x: labelW - 8, y: cy + 4, 'text-anchor': 'end' }, svg, l1); }
+    var len = Math.max(2, (it[1] / cfg.max) * barMax);
+    var bh = 16;
+    S('path', { 'class': 'seg c1', d: rightRounded(labelW, cy - bh / 2, len, bh, 4) }, svg);
+    S('text', { x: labelW + len + 6, y: cy + 4, 'class': 'val' }, svg, cfg.fmt(it[1]));
+    var hit = S('rect', { 'class': 'hit', x: 0, y: cy - rowH / 2, width: w, height: rowH, tabindex: 0, role: 'img', 'aria-label': it[0] + ': ' + cfg.fmt(it[1]) + ' ' + cfg.unit }, svg);
+    hit.addEventListener('pointermove', function (e) { showTip([{ color: 'var(--c1)', label: cfg.unit, value: cfg.fmt(it[1]) }], it[0], null, e.clientX, e.clientY); });
+    hit.addEventListener('pointerleave', hideTip);
+    hit.addEventListener('focus', function () { var b = hit.getBoundingClientRect(); showTip([{ color: 'var(--c1)', label: cfg.unit, value: cfg.fmt(it[1]) }], it[0], null, b.left + 40, b.top + 10); });
+    hit.addEventListener('blur', hideTip);
+  });
+}
+
+/* ---------- dot and range ---------- */
+function rangeChart(host, w) {
+  host.textContent = '';
+  var rowH = 62, m = { l: 44, r: 22, t: 8, b: 28 };
+  var h = m.t + rowH * EST.length + m.b;
+  var svg = S('svg', { width: w, height: h, viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-label': 'Estimated visitor spending 2022 to 2025 in million baht, with low, middle and high cases' }, host);
+  var pw = w - m.l - m.r;
+  function X(v) { return m.l + (v / 120) * pw; }
+  [0, 20, 40, 60, 80, 100, 120].forEach(function (t) {
+    S('line', { 'class': t === 0 ? 'axis' : 'grid', x1: X(t), x2: X(t), y1: m.t, y2: h - m.b }, svg);
+    S('text', { x: X(t), y: h - 10, 'text-anchor': t === 120 ? 'end' : 'middle' }, svg, String(t));
+  });
+  EST.forEach(function (e, i) {
+    var cy = m.t + rowH * i + rowH / 2;
+    S('text', { x: m.l - 8, y: cy + 4, 'text-anchor': 'end' }, svg, String(e.y));
+    S('rect', { x: X(e.lo), y: cy - 3, width: X(e.hi) - X(e.lo), height: 6, rx: 3, fill: 'var(--c1)', opacity: '0.35' }, svg);
+    S('rect', { x: X(e.lo) - 1, y: cy - 7, width: 2, height: 14, fill: 'var(--c1)' }, svg);
+    S('rect', { x: X(e.hi) - 1, y: cy - 7, width: 2, height: 14, fill: 'var(--c1)' }, svg);
+    S('circle', { cx: X(e.mid), cy: cy, r: 7, fill: 'var(--c1)', stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+    S('text', { x: X(e.mid), y: cy - 14, 'text-anchor': 'middle', 'class': 'val' }, svg, fix(e.mid, 1));
+    S('text', { x: X(e.lo), y: cy + 22, 'text-anchor': 'middle' }, svg, fix(e.lo, 1));
+    S('text', { x: Math.min(X(e.hi), w - 18), y: cy + 22, 'text-anchor': 'middle' }, svg, fix(e.hi, 1));
+    var rows = [
+      { color: 'var(--c1)', label: 'million baht, middle (US$' + e.umid + ' million)', value: fix(e.mid, 1), hl: true },
+      { color: 'var(--c1)', label: 'million baht, low (US$' + e.ulo + ' million)', value: fix(e.lo, 1) },
+      { color: 'var(--c1)', label: 'million baht, high (US$' + e.uhi + ' million)', value: fix(e.hi, 1) }
+    ];
+    var hit = S('rect', { 'class': 'hit', x: 0, y: cy - rowH / 2, width: w, height: rowH, tabindex: 0, role: 'img', 'aria-label': e.y + ': middle ' + fix(e.mid, 1) + ' million baht, low ' + fix(e.lo, 1) + ', high ' + fix(e.hi, 1) }, svg);
+    hit.addEventListener('pointermove', function (ev) { showTip(rows, e.y + ' (estimate)', null, ev.clientX, ev.clientY); });
+    hit.addEventListener('pointerleave', hideTip);
+    hit.addEventListener('focus', function () { var b = hit.getBoundingClientRect(); showTip(rows, e.y + ' (estimate)', null, b.left + 60, b.top + 10); });
+    hit.addEventListener('blur', hideTip);
+  });
+}
+
+/* ---------- charts ---------- */
+var evData = {}, relData = {}, coData = {};
+EVENT_ROWS.forEach(function (r) {
+  var y = r[0]; if (y > 2025 || r[1] === 'not held') { evData[y] = null; relData[y] = null; return; }
+  function nn(v) { return typeof v === 'number' ? v : null; }
+  evData[y] = { ind: nn(r[2]), spr: nn(r[3]), dua: nn(r[4]) };
+  relData[y] = { rel: r[6] };
+});
+COUNTRY_ROWS.forEach(function (r) { coData[r[0]] = { tha: r[2], non: r[3], blank: r[4], share: r[5] }; });
+coData[2021] = null;
+
+var evSeries = [
+  { id: 'ind', label: 'Individual triathlon', cls: 'c1', sw: 's1', color: 'var(--c1)' },
+  { id: 'spr', label: 'Sprint', cls: 'c2', sw: 's2', color: 'var(--c2)' },
+  { id: 'dua', label: 'Duathlon', cls: 'c3', sw: 's3', color: 'var(--c3)' }
+];
+legend('lg-events', evSeries);
+var coSeries = [
+  { id: 'tha', label: 'Thai (THA)', cls: 'c1', sw: 's1', color: 'var(--c1)' },
+  { id: 'non', label: 'Non-Thai', cls: 'c2', sw: 's2', color: 'var(--c2)' },
+  { id: 'blank', label: 'Blank country', cls: 'cg', sw: 'sg', color: 'var(--gray)' }
+];
+legend('lg-country', coSeries);
+
+mount(document.getElementById('ch-events'), function (host, w) {
+  columnChart(host, { cats: YEARS, data: evData, series: evSeries, max: 800, ticks: [0, 200, 400, 600, 800], totalLabel: 'Total finishers', aria: 'Stacked columns of finishers by event, 2017 to 2025. 2021 was not held. Totals: 491, 708, 700, 431, none, 666, 626, 606, 557.' }, w);
+});
+mount(document.getElementById('ch-relay'), function (host, w) {
+  columnChart(host, { cats: YEARS, data: relData, series: [{ id: 'rel', label: 'Relay teams finished', cls: 'cg', color: 'var(--gray)' }], max: 40, ticks: [0, 10, 20, 30, 40], totalLabel: 'Teams finished', h: w < 480 ? 210 : 230, aria: 'Columns of relay teams finishing, 2017 to 2025. 29, 32, 24, 11, not held, 22, 22, 23, 33.' }, w);
+});
+mount(document.getElementById('ch-country'), function (host, w) {
+  columnChart(host, { cats: YEARS, data: coData, series: coSeries, max: 800, ticks: [0, 200, 400, 600, 800], totalLabel: 'Finishers', aria: 'Stacked columns of finishers by recorded country: Thai, non-Thai and blank, 2017 to 2025. 2021 was not held.',
+    extra: function (c) { return coData[c] ? ' (Thai share of those with a country: ' + coData[c].share + ')' : ''; } }, w);
+});
+mount(document.getElementById('ch-top24'), function (host, w) {
+  barsChart(host, { items: TOP24, max: 130, fmt: num, unit: 'finishers, 2024', aria: 'Top 10 countries by finishers in 2024' }, w);
+});
+mount(document.getElementById('ch-top25'), function (host, w) {
+  barsChart(host, { items: TOP25, max: 130, fmt: num, unit: 'finishers, 2025', aria: 'Top 10 countries by finishers in 2025' }, w);
+});
+mount(document.getElementById('ch-range'), rangeChart);
+mount(document.getElementById('ch-lines'), function (host, w) {
+  barsChart(host, { items: LINES25, max: 14, fmt: function (v) { return fix(v, 2); }, unit: 'million baht, 2025 middle case (estimate)', rowH: 40, aria: 'Estimated 2025 spending by line, million baht: accommodation 13.60, entry fees 5.19, food and local spending 3.70, companions 3.70, transport and bike 1.08' }, w);
+});
+var revFmt = function (v) { return fix(v, 1); };
+function revData(idx) { var o = {}; REV.forEach(function (r) { o[r[0]] = { v: r[idx] }; }); return o; }
+mount(document.getElementById('ch-rev1'), function (host, w) {
+  columnChart(host, { cats: REV.map(function (r) { return r[0]; }), data: revData(1), series: [{ id: 'v', label: 'Hotel operations', cls: 'c1', color: 'var(--c1)' }], max: 6000, ticks: [0, 2000, 4000, 6000], ml: 46, h: 250, labelFmt: revFmt, valFmt: revFmt, totalLabel: 'Million baht', aria: 'Hotel operations revenue in million baht: 2019 3,356.3; 2022 2,398.0; 2023 3,700.6; 2024 4,152.5; 2025 3,915.0' }, w);
+});
+mount(document.getElementById('ch-rev2'), function (host, w) {
+  columnChart(host, { cats: REV.map(function (r) { return r[0]; }), data: revData(2), series: [{ id: 'v', label: 'Property development', cls: 'c2', color: 'var(--c2)' }], max: 6000, ticks: [0, 2000, 4000, 6000], ml: 46, h: 250, labelFmt: revFmt, valFmt: revFmt, totalLabel: 'Million baht', aria: 'Property development revenue in million baht: 2019 2,568.2; 2022 2,314.1; 2023 2,263.0; 2024 2,686.7; 2025 4,971.2' }, w);
+});
+
+/* ---------- tables ---------- */
+toggle('tg-events', 'tb-events', function (box) {
+  makeTable(box, EVENT_HEAD, EVENT_ROWS.map(function (r) { return r.map(function (c, i) { return i > 0 && typeof c === 'number' ? num(c) : c; }); }), 2);
+});
+toggle('tg-country', 'tb-country', function (box) {
+  makeTable(box, ['Year', 'Finishers', 'Thai (THA)', 'Non-Thai', 'Blank country', 'Thai share of those with a country'], COUNTRY_ROWS, 1);
+});
+toggle('tg-rev', 'tb-rev', function (box) {
+  var rows = REV.map(function (r) { return [r[0], fix(r[1], 1), fix(r[2], 1), fix(r[3], 1), fix(r[4], 1), fix(r[5], 1)]; });
+  rows.push(['H1 2026', '2,141.9', '2,208.5', '4,408.8', 'n/a', 'n/a']);
+  makeTable(box, ['Year', 'Hotel operations (million baht)', 'Property development (million baht)', 'Total revenue (million baht)', 'Profit for the year (million baht)', 'Total revenue (US$ million)'], rows, 1);
+});
+makeTable(document.getElementById('tb-est'), ['Year', 'Athletes counted (middle)', 'From abroad / elsewhere in Thailand / Phuket (middle)', 'Low', 'Middle', 'High'],
+  EST.map(function (e) {
+    return [e.y, e.ath, e.split,
+      fix(e.lo, 1) + 'm baht (US$' + e.ulo + 'm)', fix(e.mid, 1) + 'm baht (US$' + e.umid + 'm)', fix(e.hi, 1) + 'm baht (US$' + e.uhi + 'm)'];
+  }), 1);
+(function () {
+  var host = document.getElementById('tb-pub'); host.textContent = '';
+  var t = H('table', null, null, host), tr = H('tr', null, null, H('thead', null, null, t));
+  ['Figure', 'Event and period', 'Stated by', 'When', 'Type', 'Source'].forEach(function (h) { H('th', null, h, tr).scope = 'col'; });
+  var tb = H('tbody', null, null, t);
+  PUB.forEach(function (r) {
+    var row = H('tr', r[7] ? 'marathon' : '', null, tb);
+    var c0 = H('td', null, r[0], row);
+    if (r[7]) { H('span', 'mtag', 'marathon, not the triathlon', c0); }
+    H('td', null, r[1], row); H('td', null, r[2], row); H('td', null, r[3], row); H('td', null, r[4], row);
+    var a = H('a', null, r[6], H('td', null, null, row)); a.href = r[5]; a.target = '_blank'; a.rel = 'noopener';
+  });
+})();
+(function () {
+  var ul = document.getElementById('missing-list');
+  MISSING.forEach(function (m) { H('li', null, m, ul); });
+  var host = document.getElementById('src-list');
+  SOURCES.forEach(function (g) {
+    H('h3', null, g[0], host);
+    var u = H('ul', null, null, host);
+    g[1].forEach(function (s) { var a = H('a', null, s[0], H('li', null, null, u)); a.href = s[1]; a.target = '_blank'; a.rel = 'noopener'; });
+  });
+})();
+
+/* ---------- calculator ---------- */
+var state = { year: 2025, base: 'mid', p: presetFor('mid', 2025) };
+var SL = [
+  { id: 'thShare', label: 'Share of athletes living in Thailand', min: 0, max: 100, step: 0.1, f: function (v) { return fix(v, 1) + '%'; } },
+  { id: 'phShare', label: 'Share of those living in Phuket', min: 0, max: 100, step: 1, f: function (v) { return fix(v, 0) + '%'; } },
+  { id: 'nA', label: 'Nights, athletes from abroad', min: 1, max: 14, step: 1, f: function (v) { return String(v); } },
+  { id: 'nD', label: 'Nights, athletes from elsewhere in Thailand', min: 1, max: 10, step: 1, f: function (v) { return String(v); } },
+  { id: 'roomRate', label: 'Room rate per night', min: 1000, max: 12000, step: 100, f: function (v) { return num(v) + ' baht'; } },
+  { id: 'foodA', label: 'Food and local spending per person per day, from abroad', min: 0, max: 4000, step: 50, f: function (v) { return num(v) + ' baht'; } },
+  { id: 'foodD', label: 'Food and local spending per person per day, from elsewhere in Thailand', min: 0, max: 3000, step: 50, f: function (v) { return num(v) + ' baht'; } },
+  { id: 'comp', label: 'Companions per athlete', min: 0, max: 5, step: 0.5, f: function (v) { return fix(v, 1); } }
+];
+var ADJ = ['thShare', 'phShare', 'nA', 'nD', 'roomRate', 'foodA', 'foodD', 'comp', 'perTeam'];
+var NAMES = { low: 'Low', mid: 'Middle', high: 'High' };
+var sEl = {}, yBtn = {}, pBtn = {}, tBtn = {};
+
+function mkBtn(parent, text, fn) { var b = H('button', 'btn', text, parent); b.type = 'button'; b.addEventListener('click', fn); return b; }
+[2022, 2023, 2024, 2025].forEach(function (y) {
+  yBtn[y] = mkBtn(document.getElementById('c-year'), String(y), function () { state.year = y; state.p.thShare = TH_SHARE[state.base][y]; sync(); });
+});
+['low', 'mid', 'high'].forEach(function (k) {
+  pBtn[k] = mkBtn(document.getElementById('c-preset'), NAMES[k], function () { state.base = k; state.p = presetFor(k, state.year); sync(); });
+});
+[2, 3].forEach(function (n) {
+  tBtn[n] = mkBtn(document.getElementById('c-team'), n + ' people', function () { state.p.perTeam = n; sync(); });
+});
+SL.forEach(function (s) {
+  var row = H('div', 'srow', null, document.getElementById('c-sliders'));
+  var top = H('div', 'top', null, row);
+  var lab = H('label', null, s.label, top); lab.htmlFor = 'sl-' + s.id;
+  var out = H('output', null, null, top); out.htmlFor = 'sl-' + s.id;
+  var inp = H('input', null, null, row);
+  inp.type = 'range'; inp.id = 'sl-' + s.id; inp.min = s.min; inp.max = s.max; inp.step = s.step;
+  inp.addEventListener('input', function () { state.p[s.id] = parseFloat(inp.value); sync(); });
+  sEl[s.id] = { inp: inp, out: out, f: s.f };
+});
+
+function matches(name) {
+  var pr = presetFor(name, state.year);
+  return ADJ.every(function (k) { return Math.abs(pr[k] - state.p[k]) < 1e-9; });
+}
+function dl(host, rows) {
+  host.textContent = '';
+  rows.forEach(function (r) { H('dt', null, r[0], host); H('dd', null, r[1], host); });
+}
+function sync() {
+  [2022, 2023, 2024, 2025].forEach(function (y) { yBtn[y].setAttribute('aria-pressed', y === state.year ? 'true' : 'false'); });
+  var active = null;
+  ['low', 'mid', 'high'].forEach(function (k) { var on = matches(k); if (on) { active = k; } pBtn[k].setAttribute('aria-pressed', on ? 'true' : 'false'); });
+  [2, 3].forEach(function (n) { tBtn[n].setAttribute('aria-pressed', state.p.perTeam === n ? 'true' : 'false'); });
+  document.getElementById('c-state').textContent = active ? 'Settings match the ' + NAMES[active].toLowerCase() + ' case for ' + state.year + '.' : 'Custom settings, started from the ' + NAMES[state.base].toLowerCase() + ' case.';
+  SL.forEach(function (s) { sEl[s.id].inp.value = state.p[s.id]; sEl[s.id].out.textContent = s.f(state.p[s.id]); });
+  var p = state.p, base = presetFor(state.base, state.year);
+  document.getElementById('c-fixed').textContent = 'Set by the ' + NAMES[state.base].toLowerCase() + ' case: entry fee from abroad US$' + fix(p.entryUSD, 2) + ' and from Thailand ' + num(p.entryTHB) + ' baht (both include the 8.7% handling fee), rooms per athlete ' + p.roomsPer + ', transport and bike ' + num(p.transA) + ' baht from abroad and ' + num(p.transD) + ' baht from elsewhere in Thailand.';
+  var r = estimate(state.year, p), y = YEARDATA[state.year];
+  document.getElementById('r-total').textContent = fix(r.total / 1e6, 1) + ' million baht';
+  document.getElementById('r-usd').textContent = 'US$' + fix(r.total / r.rate / 1e6, 2) + ' million, estimate for ' + state.year + ' (exactly ' + num(Math.round(r.total)) + ' baht)';
+  dl(document.getElementById('r-ath'), [
+    ['Athletes counted', num(r.athletes)],
+    ['From abroad', num(r.abroad)],
+    ['From elsewhere in Thailand', num(r.domestic)],
+    ['Living in Phuket (add nothing)', num(r.phuket)]
+  ]);
+  var L = r.lines;
+  dl(document.getElementById('r-lines'), [
+    ['Accommodation', fix(L.accommodation / 1e6, 2)],
+    ['Entry fees', fix(L.entry / 1e6, 2)],
+    ['Food and local spending', fix(L.food / 1e6, 2)],
+    ['Companions', fix(L.companions / 1e6, 2)],
+    ['Transport and bike', fix(L.transport / 1e6, 2)]
+  ]);
+  document.getElementById('r-memo').textContent = y.starters + ' starters plus ' + y.relay + ' relay teams at ' + p.perTeam + ' people each. Memo, not added: entry fees paid by Phuket-resident athletes, ' + fix(r.phuketEntry / 1e6, 2) + ' million baht.';
+}
+sync();
+
+(function () {
+  var rows = [
+    ['People per relay team', '2', '3', '3', 'Assumption'],
+    ['Living in Thailand, 2022', '76.9%', '75.6%', '74.3%', 'Recorded Thai share plus an assumed share of non-Thai'],
+    ['Living in Thailand, 2023', '54.1%', '51.5%', '48.9%', 'Same'],
+    ['Living in Thailand, 2024', '48.9%', '35.1%', '21.2%', 'Assumption carrying the country-field change'],
+    ['Living in Thailand, 2025', '48.9%', '34.2%', '19.4%', 'Same'],
+    ['Phuket share of Thailand residents', '50%', '35%', '20%', 'Assumption'],
+    ['Entry fee, from abroad', 'US$269.58', 'US$301.10', 'US$320.67', '2026 list price including 8.7% fee'],
+    ['Entry fee, from Thailand', '4,275 baht', '6,044 baht', '6,957 baht', '2026 list price including 8.7% fee'],
+    ['Nights, abroad / elsewhere in Thailand', '3 / 2', '5 / 3', '7 / 4', 'Assumption'],
+    ['Rooms per athlete', '0.75', '1', '1 (+0.75 for companions)', 'Assumption'],
+    ['Room rate per night', '3,300 baht', '5,200 baht', '8,000 baht', '2026 athlete code list price'],
+    ['Food per person per day, abroad / elsewhere in Thailand', '800 / 600 baht', '1,500 / 1,000 baht', '2,500 / 1,500 baht', 'Assumption from guide prices'],
+    ['Transport and bike, abroad / elsewhere in Thailand', '600 / 600 baht', '1,400 / 3,200 baht', '2,400 / 6,000 baht', 'Guide fares and the organiser bike truck price'],
+    ['Companions per athlete', '0.5', '1.0', '2.5', 'Assumption; the high case comes from Ironman Mallorca']
+  ];
+  makeTable(document.getElementById('tb-inputs'), ['Input', 'Low', 'Middle', 'High', 'Label'], rows, 99);
+})();
+
+})();
+</script>
+</body>
+</html>

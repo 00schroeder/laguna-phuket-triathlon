@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Laguna Phuket Triathlon Economic Impact Report</title>
+<style>
+/* Same colours and type as the dashboard page it belongs to.
+   Layout: one reading column, tables allowed to run wider than the text. */
+:root {
+  color-scheme: light dark;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --c1: #2a78d6; --c2: #eb6834;
+  --link: #1c5cab; --note: rgba(42,120,214,0.09); --warn: rgba(235,104,52,0.13);
+  --hover: rgba(11,11,11,0.05);
+  --body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --measure: 44rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --c1: #3987e5; --c2: #d95926;
+    --link: #86b6ef; --note: rgba(57,135,229,0.14); --warn: rgba(217,89,38,0.22);
+    --hover: rgba(255,255,255,0.06);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+  --c1: #3987e5; --c2: #d95926;
+  --link: #86b6ef; --note: rgba(57,135,229,0.14); --warn: rgba(217,89,38,0.22);
+  --hover: rgba(255,255,255,0.06);
+}
+:root[data-theme="light"] { color-scheme: light; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: var(--body); font-size: 1.03rem; line-height: 1.65; overflow-x: hidden;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 56px; }
+header.top { padding: 40px 0 0; }
+.kicker { font-size: 0.92rem; color: var(--ink2); margin: 0 0 12px; letter-spacing: 0.02em; }
+h1 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); line-height: 1.14; margin: 0 0 16px; font-weight: 650; letter-spacing: -0.01em; max-width: 22ch; text-wrap: balance; }
+h2 { font-size: clamp(1.3rem, 3.8vw, 1.6rem); line-height: 1.25; margin: 0 0 14px; font-weight: 650; max-width: var(--measure); text-wrap: balance; scroll-margin-top: 16px; }
+h3 { font-size: 1.1rem; line-height: 1.3; margin: 30px 0 8px; font-weight: 650; max-width: var(--measure); scroll-margin-top: 16px; }
+p { margin: 0 0 14px; max-width: var(--measure); }
+ul { max-width: var(--measure); padding-left: 1.2rem; margin: 0 0 14px; }
+li { margin-bottom: 8px; }
+a { color: var(--link); text-underline-offset: 2px; overflow-wrap: anywhere; }
+a:focus-visible, .scroll:focus-visible { outline: 2px solid var(--c1); outline-offset: 2px; }
+strong { font-weight: 650; }
+.lede { font-size: 1.16rem; line-height: 1.55; }
+.asof { color: var(--ink2); font-size: 0.95rem; }
+.points { margin: 0 0 18px; }
+.toc h2 { font-size: 0.92rem; font-weight: 600; color: var(--ink2); letter-spacing: 0.02em; margin: 0 0 10px; }
+.companion { background: var(--note); border-left: 4px solid var(--c1); border-radius: 8px; padding: 12px 16px; margin: 20px 0 0; max-width: calc(var(--measure) + 38px); }
+.companion p { margin: 0; }
+.toc { margin: 36px 0 0; padding-top: 20px; border-top: 1px solid var(--grid); }
+.toc ol { margin: 0; padding-left: 1.5rem; max-width: var(--measure); }
+.toc li { margin-bottom: 6px; }
+section { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--grid); }
+.scroll { overflow-x: auto; max-width: 100%; margin: 18px 0 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; line-height: 1.5; font-variant-numeric: tabular-nums; }
+table.wide { min-width: 680px; }
+table.xwide { min-width: 900px; }
+th, td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--grid); }
+th { font-weight: 600; background: var(--hover); vertical-align: bottom; }
+td[style*="right"] { white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; }
+.assume { background: var(--warn); border-radius: 4px; padding: 1px 5px; font-weight: 600; }
+.srcs h3 { font-size: 1rem; margin: 22px 0 6px; }
+.srcs ul { margin: 0; }
+.srcs li { margin-bottom: 4px; }
+footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--grid); color: var(--ink2); font-size: 0.92rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="kicker">Laguna Phuket Triathlon · Local economic impact · Written report</p>
+  <h1>Triathlon visitors bring Phuket tens of millions of baht</h1>
+  <p class="lede">The Laguna Phuket Triathlon brings in visitor spending of roughly <strong>27 to 30 million baht a year (about US$0.8 million) in a middle case for 2023 to 2025</strong>, with a defensible range of about <strong>8 to 108 million baht</strong> depending on how long athletes stay, how many people travel with them and where they live.</p>
+  <ul class="points">
+      <li>That is far below the organiser's own decade-old projections of "more than 74 million baht" (around 2016) and "over 90 million baht" (2015 race week), and the gap comes mostly from two things: the field is smaller than the press figures say, and the organiser assumed three to five companions per athlete, which no survey of this race supports.</li>
+      <li>The official results show <strong>557 finishers across the individual, sprint and duathlon races in 2025, down from 700 in 2019</strong>; individual triathlon finishers fell from 537 to 347 over the same years, so the "over 1,000 triathletes" quoted every year since 2022 is not borne out by the timing lists.</li>
+      <li>At the same time the field has become far more foreign on paper: athletes recorded as Thai fell from 74% of finishers with a country in 2022 to 19% in 2025, but the country field appears to have been filled in differently from 2024, so part of that shift may be a change in recording rather than a change in who came.</li>
+      <li>The race is owned and run by Laguna Resorts &amp; Hotels, which owns four of the six race hotels; the only published "impact" numbers are the organiser's own, no participant survey exists, and no resident complaints were found in the sources that could be read, though several local forums and news pages could not be opened.</li>
+  </ul>
+  <p class="asof">Everything below is built from the research notes for this report, and each number names its source.</p>
+  <p class="asof">Prepared 9 November 2026 from public sources. The 2026 race is on Sunday 15 November 2026 and is not included.</p>
+
+  <div class="companion">
+    <p>The charts and the adjustable spending calculator are on the dashboard page: <a href="index.html">Laguna Phuket Triathlon: what the race brings to the area</a>.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#finishers">The race drew 557 to 666 triathlon finishers a year since 2022, not 1,000</a></li>
+      <li><a href="#countries">Foreign athletes went from a minority to four in five, but the country field may have changed</a></li>
+      <li><a href="#published-figures">Every published impact figure is an organiser projection from 2015 or 2016</a></li>
+      <li><a href="#estimate">A bottom-up estimate puts visitor spending near 27 million baht a year</a></li>
+      <li><a href="#ownership">Laguna Resorts &amp; Hotels owns four of the six race hotels and the race itself</a></li>
+      <li><a href="#giving-back">Giving back is documented in detail only up to 2019</a></li>
+      <li><a href="#road-closures">Road closures reach villages outside Laguna; no complaints were found in readable sources</a></li>
+      <li><a href="#not-found">What could not be found</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+      <li><a href="#appendix">Appendix: Dashboard data</a></li>
+      <li><a href="#sources">All sources</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+<section>
+<h2 id="finishers">The race drew 557 to 666 triathlon finishers a year since 2022, not 1,000</h2>
+<p>The official results for every year from 2017 to 2025 sit on the timing company Sportstats, linked from the organiser's own results page, and every list was pulled in full: rows downloaded matched the site's own total in all 45 lists, and the finisher counts matched the site's "finished" figure on each event page (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/results/">Laguna Phuket Triathlon results page</a>; <a target="_blank" rel="noopener" href="https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141771">2024 individual leaderboard</a>). A finisher here is anyone with a finish time and no did-not-finish or disqualified flag. These are the exact numbers; everything the press reports is rounded.</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Individual triathlon</th>
+<th style="text-align: right;">Sprint</th>
+<th style="text-align: right;">Duathlon</th>
+<th style="text-align: right;">Individual + sprint + duathlon</th>
+<th style="text-align: right;">Relay teams finishing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">none listed</td>
+<td style="text-align: right;">none listed</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr>
+<td>2018</td>
+<td style="text-align: right;">511</td>
+<td style="text-align: right;">197</td>
+<td style="text-align: right;">none listed</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">537</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">none listed</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr>
+<td>2020</td>
+<td style="text-align: right;">274</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td>2021</td>
+<td style="text-align: right;">not held</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">445</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">666</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">414</td>
+<td style="text-align: right;">172</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">626</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">374</td>
+<td style="text-align: right;">211</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">606</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">347</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">557</td>
+<td style="text-align: right;">33</td>
+</tr>
+</tbody>
+</table></div>
+<p>The trend is plain: <strong>the main 1.8 km swim, 50 km bike, 12 km run race has lost about a third of its finishers since 2019 (537 to 347), and has fallen every year since the 2022 restart (445, 414, 374, 347)</strong>. The sprint has held steady at around 170 to 210, and the duathlon has halved since 2022. Relay lists show teams, not people, and do not say how many people are in a team (<a target="_blank" rel="noopener" href="https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141772">2024 relay list</a>). There was no race in 2021: the 28th edition was announced for November 2021 but held on 20 November 2022 (<a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2021/01/laguna-phuket-names-triathlon-dates">TTR Weekly, Jan 2021</a>; <a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2022/09/laguna-phuket-triathlon-is-back">TTR Weekly, Sep 2022</a>). The 2020 race went ahead under COVID rules with only Thai-coded athletes in the results (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/?p=4559">Laguna Phuket Tri, 2020</a>).</p>
+<p>The event pages also carry a larger "entrants" number that the lists do not explain. For the individual race it was 735 in 2022, 566 in 2023, 474 in 2024 and 436 in 2025, against 491, 565, 395 and 350 rows in the lists. The extra names are probably registered athletes who did not start; that is an interpretation, because the site does not label the number. Even on that wider measure, <strong>individual-race entrants fell 41% from 2022 to 2025</strong>.</p>
+<p>The press figures tell a different story. The headline has been "more than 1,000 triathletes" in 2018, 2019, 2023, 2024 and 2025, and "more than 1,200 athletes" in 2022 (<a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2022/11/phuket-triathlon-is-back-to-winning-ways">TTR Weekly 2022</a>; <a target="_blank" rel="noopener" href="https://www.lagunaphuket.com/?p=7665">Laguna Phuket 2023</a>; <a target="_blank" rel="noopener" href="https://www.pattayamail.com/travel/wilde-times-in-phuket-kiwi-superstar-dominates-iconic-triathlon-481164">Pattaya Mail 2024</a>; <a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/tayler-reid-and-georgia-taylor-brown-storm-to-victory-as-the-31st-laguna-phuket-triathlonrace-of-legends-concludes-in-spectacular-fashion-thai-athletes-shine-on-home-soil/">Laguna Phuket Tri 2025</a>). None of these say whether they count entrants, starters or finishers. The 2022 figure of 1,200 is roughly reachable from the site's entrant numbers (735 + 305 + 88 = 1,128 individual, sprint and duathlon entrants, plus 25 relay teams). For 2025 it is not: individual, sprint and duathlon entrants totalled 705, relay members are perhaps 105 if teams have three people, and the open water swims add about 124 entrants, which comes to about 934 before any fun run, and no 2025 fun run list exists. In 2024, 1,000 is only reached by adding the 283 fun run finishers and the swimmers to the triathletes. <strong>The honest headline for a resident audience is that about 560 to 670 people finished a triathlon or duathlon at Laguna each year from 2022 to 2025, plus 22 to 33 relay teams, and that the field has shrunk since 2019.</strong> The 2025 organiser estimate of "over 3,000 spectators" is a single unverified figure from the organiser (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/phuket-thailand-gears-up-for-the-31st-laguna-phuket-triathlon/">Laguna Phuket Tri, 31st preview</a>).</p>
+<p>The 2026 race, the 32nd, is on Sunday 15 November 2026, with an open water swim on Saturday 14 November; online registration closed on 8 November and no entry number had been announced by 9 November (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/embrace-the-challenge-early-bird-registration-for-the-32nd-laguna-phuket-triathlon-is-open-until-31st-may-2026/">early bird release</a>; <a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/lpt-individual/">individual entry page</a>). No 2026 count or estimate is possible yet.</p>
+</section>
+<section>
+<h2 id="countries">Foreign athletes went from a minority to four in five, but the country field may have changed</h2>
+<p>Each result row carries a three-letter country code. It is not stated whether that is passport country or country of residence, so a British athlete living in Bang Tao may appear as GBR. Across the individual, sprint and duathlon finishers, the recorded split is:</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Finishers</th>
+<th style="text-align: right;">Thai (THA)</th>
+<th style="text-align: right;">Non-Thai</th>
+<th style="text-align: right;">Blank country</th>
+<th style="text-align: right;">Thai share of those with a country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">223</td>
+<td style="text-align: right;">182</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">55%</td>
+</tr>
+<tr>
+<td>2018</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">334</td>
+<td style="text-align: right;">283</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">54%</td>
+</tr>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">401</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">64%</td>
+</tr>
+<tr>
+<td>2020</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">405</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">666</td>
+<td style="text-align: right;">454</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">74%</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">626</td>
+<td style="text-align: right;">302</td>
+<td style="text-align: right;">315</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">49%</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">606</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">476</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">21%</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">557</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">449</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two readings fit these numbers, and the lists do not say which is right. In the first, the change is real: Thai athletes stopped coming and foreign visitors replaced them, which fits Laguna's own statement that 2024 hotel revenue rose on "more foreign visitors" (<a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833471_2.Explanation%20of%20operating%20results%20Q4-2024_MD-A_E.pdf">LRH 2024 results explanation</a>). In the second, the way the field was filled in changed from 2024: Thai-coded individual finishers dropped from 175 in 2023 to 64 in 2024, a fall of nearly two-thirds in one year, in the same year that registration was split into "Overseas" and "Thais &amp; Expats" entry pages (<a target="_blank" rel="noopener" href="https://www.active.com/cherntalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-overseas-2024">Overseas 2024</a>; <a target="_blank" rel="noopener" href="https://www.active.com/cherngtalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-thais-and-expats-2024">Thais &amp; Expats 2024</a>). If foreigners living in Thailand were coded THA before 2024 and by passport after, the "foreign" share from 2024 includes Phuket residents. The estimate below carries both readings into its low and high cases rather than choosing one.</p>
+<p>The mix of countries also changed. In 2023 the leading foreign sources in the individual race were Singapore (47) and Hong Kong (37); in 2024 and 2025 they were Great Britain, Australia and France. Across individual, sprint and duathlon in 2025, Great Britain and Thailand each had 108 finishers, followed by Australia 47, France 31, Russia 30, Germany 24, the Netherlands 22, the United States 20, Italy 17 and Malaysia 14. Country counts in the press (30, 48, 51, or "30 and 65" in a single 2024 article) are not consistent enough to use (<a target="_blank" rel="noopener" href="https://www.pattayamail.com/travel/wilde-times-in-phuket-kiwi-superstar-dominates-iconic-triathlon-481164">Pattaya Mail 2024</a>).</p>
+</section>
+<section>
+<h2 id="published-figures">Every published impact figure is an organiser projection from 2015 or 2016</h2>
+<p>No independent study of this race's economic impact was found, in English or Thai. The only numbers come from Laguna Phuket itself and are forward-looking estimates, not measured results. A press release on the organiser's site (titled for the 2017 date announcement, with text that may describe the 2016 edition) says the race "is estimated to generate more than 74 million baht spending in tourism segment for Phuket Province" from "more than 1,100 athletes" and their supporters, and that hotel room and food and beverage revenue for Laguna Phuket's own hotels and businesses is "approximated 9 million baht during the race weekend" (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/">lagunaphukettri.com</a>). In October 2015 Prapa Hemmin, Laguna Phuket's director of sales for MICE and corporate events, said the Laguna Tri-Fest week, which then combined this race with a Challenge Laguna Phuket race, was "projected to generate over 90 million baht", on the basis of thousands of athletes each bringing three to five companions and staying four to five nights (<a target="_blank" rel="noopener" href="https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers">Thaiger, 12 Oct 2015</a>). The two figures cover different events and periods and cannot be read as a trend.</p>
+<p>Recent official statements give no numbers. A 2025 booklet welcome, attributed to the Governor of Phuket, says the race "plays an important role in stimulating the local economy" (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf">LPT 2025 booklet</a>), and the 2026 release says it will "significantly boost" high-season tourism (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/embrace-the-challenge-early-bird-registration-for-the-32nd-laguna-phuket-triathlon-is-open-until-31st-may-2026/">LPT, 8 Apr 2026</a>). These are claims, not measurements.</p>
+<p>Figures for the June <strong>Laguna Phuket Marathon</strong> are often quoted alongside the triathlon and must be kept apart: 215 million baht (2017, an article citing Frost &amp; Sullivan research for visitor numbers) (<a target="_blank" rel="noopener" href="https://www.paulpoole.co.th/edm/nov17/sport-tourism-on-phuket.html">Paul Poole, Nov 2017</a>), 146.8 million baht (2018, an unnamed "independent study") (<a target="_blank" rel="noopener" href="https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/">endurance.biz</a>), and 291.58 million baht (2019, organiser, seen only in a search summary). The marathon draws more than 7,000 runners (<a target="_blank" rel="noopener" href="https://www.nationthailand.com/news/tourism/40067436">The Nation, 2026</a>), roughly ten times the triathlon's field, so its figures say nothing about the triathlon.</p>
+</section>
+<section>
+<h2 id="estimate">A bottom-up estimate puts visitor spending near 27 million baht a year</h2>
+<p>The estimate counts what visiting athletes and their companions spend on the race and their stay. It uses only numbers from the research notes. Where no number exists, the input is labelled an assumption, with a reason and a range. It is a gross figure: no multiplier is applied, because the notes contain no sourced multiplier for Phuket.</p>
+<h3 id="who-is-counted">Who is counted</h3>
+<p>The headcount is the individual, sprint and duathlon <strong>starters</strong>, meaning finishers plus non-finishers whose timing chip was read on course (so they did travel and start), plus relay members. Fun runs and open water swims are left out, because many of their entrants appear to be local and some swimmers also raced the triathlon.</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Input</th>
+<th>2022</th>
+<th>2023</th>
+<th>2024</th>
+<th>2025</th>
+<th>Unit, source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Individual + sprint + duathlon starters</td>
+<td>736</td>
+<td>670</td>
+<td>640</td>
+<td>562</td>
+<td>people, Sportstats lists (finishers + non-finishers with a timing read)</td>
+</tr>
+<tr>
+<td>Relay teams starting</td>
+<td>24</td>
+<td>23</td>
+<td>24</td>
+<td>33</td>
+<td>teams, Sportstats lists</td>
+</tr>
+<tr>
+<td>People per relay team</td>
+<td>2 low, 3 middle and high</td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong class="assume">assumption</strong>: a swim, bike, run relay is usually three people; the lists do not show members, so two is the low case</td>
+</tr>
+<tr>
+<td>Thai share of finishers with a country</td>
+<td>74.3%</td>
+<td>48.9%</td>
+<td>21.2%</td>
+<td>19.4%</td>
+<td>Sportstats lists</td>
+</tr>
+</tbody>
+</table></div>
+<p>These people are split into three groups. <strong>Athletes who live in Thailand</strong> (Thai citizens plus foreigners living here) are set by year. For 2022 and 2023 the share is the recorded Thai share, plus 10% (low case), 5% (middle) or 0% (high) of the non-Thai finishers, to allow for foreigners living in Thailand. For 2024 and 2025, where the country field may have changed, the low case assumes the whole fall in the Thai share was a change in recording and holds the Thailand-resident share at the 2023 level of 48.9%; the high case takes the recorded Thai share at face value; the middle case is halfway between. This is an <strong class="assume">assumption</strong>, and it is the biggest single source of uncertainty for 2024 and 2025. <strong>Athletes who live in Phuket</strong> are then a share of the Thailand-resident group: 50% (low), 35% (middle) or 20% (high). This is an <strong class="assume">assumption</strong>: no source gives it. Phuket has a resident triathlon community, while the organiser runs a Bangkok-to-Phuket bike truck for domestic athletes (<a target="_blank" rel="noopener" href="https://lagunaphukettri.com/?p=4603">bike transport page</a>); the only comparator is the 2018 marathon, where about 80% of runners came from outside Phuket (<a target="_blank" rel="noopener" href="https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/">endurance.biz</a>). Phuket residents are left out of the spending total: they have no hotel bill and their spending is local money moving around, not new money arriving. Their entry fees are shown separately as a memo line.</p>
+<h3 id="spending-inputs">Spending inputs</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Line</th>
+<th>From abroad: low / middle / high</th>
+<th>From elsewhere in Thailand: low / middle / high</th>
+<th>Source and reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entry fee (money to the organiser)</td>
+<td>US$248 / 277 / 295, plus 8.7% handling fee, converted at that year's rate</td>
+<td>3,933 / 5,560 / 6,400 baht, plus 8.7%</td>
+<td>2026 list prices (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/lpt-individual/">individual</a>, <a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/duathlon/">duathlon</a>); overseas early, regular and late rates; Thai low uses the duathlon rate as a stand-in for the unpublished sprint fee. <strong class="assume">Assumption</strong>: 2022 to 2025 fees were not found, so 2026 prices are used for every year, which likely overstates earlier years slightly</td>
+</tr>
+<tr>
+<td>Nights</td>
+<td>3 / 5 / 7</td>
+<td>2 / 3 / 4</td>
+<td><strong class="assume">Assumption</strong>. The 2026 athlete hotel code covers three nights, 12 to 15 November (<a target="_blank" rel="noopener" href="https://lagunaphukettri.com/accommodation">accommodation page</a>); comparators are Ironman Mallorca 5.5 days (<a target="_blank" rel="noopener" href="https://majorcadailybulletin.com/news/local/2022/05/13/101167/sport-event-mallorca-ironman.html">Majorca Daily Bulletin</a>) and an average 6.72 to 7.67 nights for all Bang Tao hotel guests in 2023 and 2024 (<a target="_blank" rel="noopener" href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf">C9 Hotelworks, Feb 2025</a>). No source exists for domestic athletes, so their stays are set shorter</td>
+</tr>
+<tr>
+<td>Rooms per athlete</td>
+<td>0.75 / 1 / 1</td>
+<td>0.75 / 1 / 1</td>
+<td><strong class="assume">Assumption</strong>: low case lets some athletes share with club mates; one companion shares the athlete's room</td>
+</tr>
+<tr>
+<td>Room rate, per night, breakfast for two</td>
+<td>3,300 / 5,200 / 8,000 baht</td>
+<td>same</td>
+<td>2026 athlete code rates: HOMM Suites 3,300, Angsana 5,200, Dusit Thani 8,000 (<a target="_blank" rel="noopener" href="https://lagunaphukettri.com/accommodation">accommodation page</a>). The middle rate is close to the 2024 island-wide average room rate of 5,241 baht (<a target="_blank" rel="noopener" href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf">C9 Hotelworks</a>). <strong class="assume">Assumption</strong>: 2026 rates are used for every year</td>
+</tr>
+<tr>
+<td>Food and local spending, per person per day</td>
+<td>800 / 1,500 / 2,500 baht</td>
+<td>600 / 1,000 / 1,500 baht</td>
+<td><strong class="assume">Assumption</strong> built from guide prices: casual meals at Boat Avenue about 250 to 600 baht a person, upper places 1,200 to 2,000 (<a target="_blank" rel="noopener" href="https://phuketexpatguide.com/blog/food-restaurants-bang-tao-cherng-talay/">Phuket Expat Guide</a>); breakfast is in the room rate. Lower for domestic visitors because a news report gives Thai visitors about 5,100 and foreigners about 9,100 baht a day overall (<a target="_blank" rel="noopener" href="https://www.thephuketnews.com/phuket-upbeat-on-high-season-outlook-98481.php">Phuket News</a>, period not stated)</td>
+</tr>
+<tr>
+<td>Transport and bike, per athlete</td>
+<td>600 / 1,400 / 2,400 baht</td>
+<td>600 / 3,200 / 6,000 baht</td>
+<td>Airport to Laguna about 300 baht metered or 700 pre-booked each way (<a target="_blank" rel="noopener" href="https://kwx.liehendr.com/content/wikivoyage_en_all_maxi_2025-02/A/Bang_Tao">Wikivoyage, Feb 2025</a>), up to 1,200 by sedan (<a target="_blank" rel="noopener" href="https://www.thetraveler.org/how-to-get-from-phuket-airport-to-diamond-resort-phuket/">thetraveler.org</a>). Domestic middle adds half of athletes using the 3,600 baht round-trip bike truck; high adds it for all (<a target="_blank" rel="noopener" href="https://lagunaphukettri.com/?p=4603">bike transport page</a>). Flights are left out because airlines are not local businesses</td>
+</tr>
+<tr>
+<td>Companions per athlete</td>
+<td>0.5 / 1.0 / 2.5</td>
+<td>same</td>
+<td><strong class="assume">Assumption</strong>. The only measured triathlon figure in the notes is 2.49 companions per athlete at Ironman Mallorca, a larger, longer race (<a target="_blank" rel="noopener" href="https://majorcadailybulletin.com/news/local/2022/05/13/101167/sport-event-mallorca-ironman.html">Majorca Daily Bulletin</a>); that sets the high case. The organiser's 2015 three to five is not used, for the reasons below</td>
+</tr>
+<tr>
+<td>Companions' spending</td>
+<td>food per day as above for each companion; in the high case, 0.75 extra rooms per athlete</td>
+<td>same</td>
+<td>Follows from the lines above; 2.5 companions plus the athlete need about 1.75 rooms</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="the-2025-middle-case-worked-in-full">The 2025 middle case, worked in full</h3>
+<p>In 2025, 562 people started the individual, sprint and duathlon races and 33 relay teams started; at three people a team that is 99 more, so <strong>661 athletes</strong>. The Thailand-resident share is halfway between 48.9% and 19.4%, which is 34.2%, so 226 athletes lived in Thailand and <strong>435 travelled from abroad</strong>. Of the 226, 35% lived in Phuket (<strong>79</strong>) and <strong>147 came from elsewhere in Thailand</strong>.</p>
+<p>Each athlete from abroad spends: entry fee US$277 × 1.087 = US$301.10, × 32.8619 baht per dollar = 9,895 baht; hotel 5 nights × 1 room × 5,200 = 26,000 baht; food 5 days × 1,500 = 7,500 baht; transport 1,400 baht; one companion eating 5 days × 1,500 = 7,500 baht. That is <strong>52,295 baht per athlete from abroad</strong>.</p>
+<p>Each athlete from elsewhere in Thailand spends: entry fee 5,560 × 1.087 = 6,044 baht; hotel 3 × 5,200 = 15,600 baht; food 3 × 1,000 = 3,000 baht; transport 1,400 + half of 3,600 = 3,200 baht; one companion 3 × 1,000 = 3,000 baht. That is <strong>30,844 baht per domestic athlete</strong>.</p>
+<p>The total is 435 × 52,295 = 22,748,325 baht plus 147 × 30,844 = 4,534,068 baht, which is <strong>27,282,393 baht, about 27.3 million baht or US$0.83 million</strong>. By line: entry fees 5.19 million, accommodation 13.60 million, food and local spending 3.70 million, transport and bike 1.08 million, companions 3.70 million. The 79 Phuket-resident athletes paid about 0.48 million baht in entry fees on top, which is shown as a memo and not added. Those numbers mean about 2,616 room-nights (435 × 5 + 147 × 3), against about 7,460 room-nights in the six Laguna hotels over five nights (1,492 rooms in the <a target="_blank" rel="noopener" href="https://lagunaphukettri.com/wp-content/uploads/2025/02/Laguna-Phuket-fact-sheet-EN-version-Feb-2025.pdf">Laguna fact sheet</a>), though not every athlete stays in Laguna.</p>
+<h3 id="all-four-years">All four years</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Athletes counted (middle)</th>
+<th style="text-align: right;">From abroad / elsewhere in Thailand / Phuket (middle)</th>
+<th style="text-align: right;">Low</th>
+<th style="text-align: right;">Middle</th>
+<th style="text-align: right;">High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">808</td>
+<td style="text-align: right;">197 / 397 / 214</td>
+<td style="text-align: right;">7.3m baht (US$0.21m)</td>
+<td style="text-align: right;">22.7m baht (US$0.65m)</td>
+<td style="text-align: right;">79.1m baht (US$2.26m)</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">739</td>
+<td style="text-align: right;">358 / 247 / 133</td>
+<td style="text-align: right;">9.2m baht (US$0.26m)</td>
+<td style="text-align: right;">26.6m baht (US$0.76m)</td>
+<td style="text-align: right;">91.2m baht (US$2.62m)</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">712</td>
+<td style="text-align: right;">462 / 162 / 87</td>
+<td style="text-align: right;">9.4m baht (US$0.27m)</td>
+<td style="text-align: right;">29.5m baht (US$0.84m)</td>
+<td style="text-align: right;">107.9m baht (US$3.06m)</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">661</td>
+<td style="text-align: right;">435 / 147 / 79</td>
+<td style="text-align: right;">8.4m baht (US$0.25m)</td>
+<td style="text-align: right;">27.3m baht (US$0.83m)</td>
+<td style="text-align: right;">101.0m baht (US$3.07m)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dollar amounts use the Federal Reserve's yearly average rates: 35.0500 (2022), 34.7841 (2023), 35.2845 (2024) and 32.8619 (2025) baht per dollar (<a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/AEXTHUS">FRED AEXTHUS</a>). The low and high cases stack every low or every high input together, so they are outer bounds rather than likely outcomes; most of the width comes from companions and nights. The middle case barely moves from 2023 to 2025 even though the field shrank by about a tenth, because more of the field is recorded as coming from abroad, and foreign visitors spend more per head. If the 2024 change was only a change in recording, the low case is the closer one for 2024 and 2025. Laid against the visitor statistics, the middle case is in line: an athlete from abroad and one companion spend about 52,000 baht between them, against an average of 37,440 baht per international visitor per visit to Phuket in 2024 (<a target="_blank" rel="noopener" href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf">C9 Hotelworks, from Ministry of Tourism and Sports data</a>).</p>
+<h3 id="what-the-estimate-does-not-cover">What the estimate does not cover</h3>
+<p>No multiplier is applied, so the figures are first-round spending only, not the wages and supplier purchases that follow; the notes contain no sourced multiplier for Phuket. November is the start of Phuket's high season, and island-wide hotel occupancy was 69% across 2024 (<a target="_blank" rel="noopener" href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf">C9 Hotelworks</a>), so some athlete room-nights may have replaced guests who would have stayed anyway; no November occupancy figure was found, so that share cannot be measured. Some foreign athletes may have been in Phuket on holiday regardless, and the estimate counts their whole stay. There is no survey of this race's participants, so stay length, party size and spending are all borrowed or assumed. Entry fees go to the organiser, which pays the race's costs (a US$20,000 prize purse, timing, medical and safety services) out of them; those costs are not published, and part of the prize money goes to foreign professionals. Some of the bike truck money is spent outside Phuket. On the other side, the estimate leaves out spectators, registered athletes who paid but did not start (about 143 in 2025 if the site's entrant figure counts them), fun run and swim visitors, and any training camp spending before the race.</p>
+<h3 id="why-the-organiser-s-figures-are-two-to-three-times-higher">Why the organiser's figures are two to three times higher</h3>
+<p>The organiser's 74 million baht for "more than 1,100 athletes" works out at about 67,000 baht per athlete, companions included. Rerunning the 2025 middle case with four companions per athlete, the midpoint of the organiser's three to five, and the extra rooms they need, raises the total from 27.3 million to about 58.8 million baht. Scaling that to the organiser's 1,100 athletes gives about 98 million baht. So the method here is not lower in itself; <strong>the difference is almost entirely the assumed field size and the assumed number of companions</strong>. The results lists show 661 athletes in 2025 in the events counted, not 1,100, and no source measured three to five companions for this race; the one measured triathlon figure in the notes is 2.49, at a full-distance Ironman. The 2015 figure of 90 million baht also covered a second race, Challenge Laguna Phuket, and stays of four to five nights for "thousands of athletes" (<a target="_blank" rel="noopener" href="https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers">Thaiger, 2015</a>). No 2015 or 2016 exchange rate is in the notes, so those figures are given in baht only.</p>
+</section>
+<section>
+<h2 id="ownership">Laguna Resorts &amp; Hotels owns four of the six race hotels and the race itself</h2>
+<p>Laguna Phuket is owned and developed by <strong>Laguna Resorts &amp; Hotels PCL (LRH)</strong>, a subsidiary of Singapore-listed Banyan Tree Holdings (now Banyan Group), which held about <strong>86.28%</strong> of it when LRH was delisted from the Stock Exchange of Thailand on <strong>12 September 2026</strong> for failing to restore a 15% public float (<a target="_blank" rel="noopener" href="https://groupbanyan.com/sites/btg/files/2026-09/29-26_Banyan%20Tree%20Holdings%20Limited%20-%20Delisting%20of%20LRH_full%20set.pdf">Banyan Tree Holdings notice, 1 Sep 2026</a>). Of the six hotels marketed as Laguna Phuket and offered on the athlete code, LRH's own filings count four as group hotels: Angsana, Banyan Tree Phuket, Cassia and HOMM Suites, about 983 rooms (<a target="_blank" rel="noopener" href="https://groupbanyan.com/sites/btg/files/2026-08/26-26_SGX_11%20Aug%202026_LRH-Q22026%20Results%20_full%20set.pdf">LRH Q2 2026 results</a>; <a target="_blank" rel="noopener" href="https://lagunaphukettri.com/wp-content/uploads/2025/02/Laguna-Phuket-fact-sheet-EN-version-Feb-2025.pdf">Laguna fact sheet</a>). Dusit Thani Laguna Phuket was sold to Dusit Thani PCL in 2010 (<a target="_blank" rel="noopener" href="https://thethaiger.com/news/phuket/Laguna-Phuket-sells-Dusit-Thani-Bt262b">Thaiger, 2010</a>), and SAii Laguna Phuket was sold to Singha Estate in 2018 while Outrigger kept running it (<a target="_blank" rel="noopener" href="https://www.travelweekly.com/Travel-News/Hotel-News/Outrigger-sells-six-resorts-continues-to-run-them">Travel Weekly</a>); its current owner was not checked. Boat Avenue, the villa and condo owners who rent to athletes, and Bang Tao's guesthouses and restaurants are independent of LRH.</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Hotel operations (hotels, golf, retail)</th>
+<th style="text-align: right;">Property development</th>
+<th style="text-align: right;">Total revenue</th>
+<th style="text-align: right;">Profit for the year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">3,356m baht (US$108m)</td>
+<td style="text-align: right;">2,568m</td>
+<td style="text-align: right;">6,158m baht (US$198m)</td>
+<td style="text-align: right;">358m baht</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">2,398m baht (US$68m)</td>
+<td style="text-align: right;">2,314m</td>
+<td style="text-align: right;">4,797m baht (US$137m)</td>
+<td style="text-align: right;">5m baht</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">3,701m baht (US$106m)</td>
+<td style="text-align: right;">2,263m</td>
+<td style="text-align: right;">6,117m baht (US$176m)</td>
+<td style="text-align: right;">376m baht</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">4,153m baht (US$118m)</td>
+<td style="text-align: right;">2,687m</td>
+<td style="text-align: right;">7,594m baht (US$215m)</td>
+<td style="text-align: right;">1,291m baht</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">3,915m baht (US$119m)</td>
+<td style="text-align: right;">4,971m</td>
+<td style="text-align: right;">9,327m baht (US$284m)</td>
+<td style="text-align: right;">2,017m baht</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sources: LRH audited statements for <a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/1X38Y0OWGDAH2YWD/597799_4-LRH_2019%20FS_E.pdf">2019</a>, <a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/2PKMGLHQP674R2ML/787239_4.%20LRH_2023%20FS_E.pdf">2022 and 2023</a>, <a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833473_4.LRH_2024%20FS_E.pdf">2024</a> and <a target="_blank" rel="noopener" href="https://www.groupbanyan.com/sites/btg/files/2026-02/4_LRH_2025_FS_E.pdf">2025</a>. Hotel operations include Banyan Tree Bangkok and Laguna Golf Bintan, so this is not Phuket alone, and the filings do not split it out. The 2024 total includes 517 million baht of insurance income. In 2025, selling homes overtook running hotels for the first time, and the property backlog stood at 15,655 million baht in August 2026 (<a target="_blank" rel="noopener" href="https://groupbanyan.com/sites/btg/files/2026-08/26-26_SGX_11%20Aug%202026_LRH-Q22026%20Results%20_full%20set.pdf">LRH Q2 2026</a>). None of LRH's results announcements mention the triathlon. For scale, the 2025 middle-case visitor spending of 27.3 million baht equals about 0.7% of LRH's group hotel revenue that year, and only part of it reaches LRH. The race was created in 1994 by IMG with Laguna to promote the resort (<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Laguna_Phuket_Triathlon">Wikipedia</a>), and the 2025 booklet still lists Laguna as organiser, GAA Events as co-organiser, and Laguna staff as volunteers (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf">LPT 2025 booklet</a>).</p>
+</section>
+<section>
+<h2 id="giving-back">Giving back is documented in detail only up to 2019</h2>
+<p>Charity is channelled through the Laguna Phuket Foundation and its Children First Fund, set up in 2017, which the 2025 booklet says has supplied food every month since then to four orphanages housing more than 200 children (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf">LPT 2025 booklet</a>). The specific amounts found are older: a 1,000,000 baht donation to the Kao Project for 11 hospitals announced at the 2017 race press conference by Banyan Tree founder KP Ho (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/2017-laguna-phuket-triathlon-kicks-high-gear-towards-good-causes/">LPT 2017</a>), more than 250,000 baht raised by the 2018 sprint for the Children First Fund (search summary only) (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/?p=4538">lagunaphukettri.com</a>), and a 2019 fun run that gave 9 baht per kilometre to the Kao Kon La Kao Foundation (<a target="_blank" rel="noopener" href="https://mail.thephuketnews.com/laguna-phuket-triathlon-doubles-down-on-good-causes-two-charity-partners-unveiled-72751.php">Phuket News, 2019</a>). <strong>No donation total for the triathlon was found for 2020 to 2025.</strong> The race also brings in local partners: the 2025 booklet credits the Cherngtalay Sub-District Administration Organization for water safety, Phuket Police for road safety, Bangkok Hospital Phuket for medical cover, and a community relations coordinator, but gives no figures for local hiring, vendors or volunteers.</p>
+</section>
+<section>
+<h2 id="road-closures">Road closures reach villages outside Laguna; no complaints were found in readable sources</h2>
+<p>The most detailed closure notice found is for 2023. On race morning, all Laguna roads and Lagoon Road were closed from 06:30 to 11:00, and closures on public roads ran from about 05:30 to 11:00 across Road 4030 to Bandon Market, the Road 402 motorbike lane, Road 3029, the Airport Road (4026), the Old Airport Road (4031), Road 4018, Nai Thon and Layan, and village roads in Prusompan, Pruchampa, Nop Pring, Pak Plee, Koktanod and Ban Sakoo; the notice warned of 30 minutes' extra travel and set a practice-day closure on the Friday from 07:00 to 11:00 (<a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2023/11/LPT23-Road-Closure-Flyer-ENG-Compressed.pdf">LPT23 road closure flyer</a>). In 2018 the Thaiger reported roads around Laguna blocked "at times" until midday (<a target="_blank" rel="noopener" href="https://thethaiger.com/news/phuket/laguna-phuket-triathlon-road-closures-2">Thaiger, 18 Nov 2018</a>). So the race affects residents well beyond the Laguna gates for one Sunday morning and one practice morning a year. No notices for 2024, 2025 or 2026 were found.</p>
+<p>Searches for complaints from residents, villa owners or Bang Tao and Cherng Talay community groups about the race found none. That is not proof that none exist: The Phuket News, ASEAN NOW (Thaivisa) and Phuket Gazette pages returned blocks or errors, and Facebook groups and Reddit could not be searched. The fair statement is "none found in the sources that could be read".</p>
+</section>
+<section>
+<h2 id="not-found">What could not be found</h2>
+<p>The gaps matter as much as the numbers. There is <strong>no survey of this race's participants</strong>, so where athletes live, how long they stay, how many people come with them and what they spend are all assumed. Whether the country code is passport or residence, and why it shifted after 2023, is not stated. No independent or post-race measured economic impact exists for the triathlon; the 74 and 90 million baht figures are a decade-old organiser projection. Entry fees for 2022 to 2025, and sprint, swim and fun run fees for any year, were not found. Relay team sizes, the meaning of the event pages' "entrants" figure, and fun run lists for 2020, 2022, 2023 and 2025 are missing. November occupancy and room rates for Phuket, Bang Tao rates outside the Laguna hotels, and any sourced multiplier are missing. Laguna does not publish race costs, its race-week hotel revenue, or occupancy as a result. Charity totals after 2019, local jobs, vendor and volunteer numbers, closure notices after 2023, and any record of resident complaints were not found. The 2026 race had not been run at the research date, and no entry count was published.</p>
+</section>
+<section>
+<h2 id="conclusion">Conclusion</h2>
+<p>The defensible message for Laguna residents is narrower than the press releases: the triathlon is a mid-sized race of roughly 600 to 700 athletes, not 1,000-plus, and the field has shrunk since 2019, yet it probably brings in a few tens of millions of baht a year, most of it on hotel rooms, because a growing share of athletes appears to fly in from abroad. Whether that foreign shift is real or partly a change in how countries were recorded is the single question that would most change the 2024 and 2025 numbers, and it could be settled cheaply: the organiser's registration data already splits "Overseas" from "Thais &amp; Expats".</p>
+<p>The money's path also matters for a resident audience. The biggest line, accommodation, goes mainly to hotels that the race's own organiser owns, while the costs that residents bear, closed roads across Cherng Talay and Thalang on one Sunday morning, are spread across villages that see a smaller share of the spending. A short participant survey at registration, a published count of entrants by residence, and a published charity total each year would turn most of the assumptions in this report into facts.</p>
+</section>
+<section>
+<h2 id="appendix">Appendix: Dashboard data</h2>
+<h3 id="finishers-by-event-by-year-people-except-relay-teams">Finishers by event by year (people, except relay = teams)</h3>
+<p>Source: Sportstats results lists linked from the <a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/results/">organiser's results page</a>.</p>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="xwide">
+<thead>
+<tr>
+<th>Year</th>
+<th>Race date</th>
+<th style="text-align: right;">Individual</th>
+<th style="text-align: right;">Sprint</th>
+<th style="text-align: right;">Duathlon</th>
+<th style="text-align: right;">Ind + sprint + dua</th>
+<th style="text-align: right;">Relay teams</th>
+<th style="text-align: right;">10 km run</th>
+<th style="text-align: right;">5 km run</th>
+<th style="text-align: right;">Kids 2 km</th>
+<th style="text-align: right;">Fun run</th>
+<th style="text-align: right;">Open water swims (individual)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td>19 Nov</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">396</td>
+<td style="text-align: right;">519</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>18 Nov</td>
+<td style="text-align: right;">511</td>
+<td style="text-align: right;">197</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">516</td>
+<td style="text-align: right;">660</td>
+<td style="text-align: right;">102</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>24 Nov</td>
+<td style="text-align: right;">537</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">306</td>
+<td style="text-align: right;">513</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>22 Nov</td>
+<td style="text-align: right;">274</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">no list</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>not held</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>2022</td>
+<td>20 Nov</td>
+<td style="text-align: right;">445</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">666</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">no list</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>19 Nov</td>
+<td style="text-align: right;">414</td>
+<td style="text-align: right;">172</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">626</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">no list</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>17 Nov</td>
+<td style="text-align: right;">374</td>
+<td style="text-align: right;">211</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">606</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">283</td>
+<td style="text-align: right;">104</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>23 Nov</td>
+<td style="text-align: right;">347</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">557</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">no list</td>
+<td style="text-align: right;">85</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>15 Nov</td>
+<td style="text-align: right;">not yet run</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table></div>
+<p>Individual-race "entrants" on the event pages (meaning undocumented): 2017 646, 2018 702, 2019 703, 2020 358, 2022 735, 2023 566, 2024 474, 2025 436.</p>
+<h3 id="thai-vs-non-thai-finishers-individual-sprint-duathlon">Thai vs non-Thai finishers (individual + sprint + duathlon)</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Finishers</th>
+<th style="text-align: right;">Thai</th>
+<th style="text-align: right;">Non-Thai</th>
+<th style="text-align: right;">Blank country</th>
+<th style="text-align: right;">Thai share of known</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td style="text-align: right;">491</td>
+<td style="text-align: right;">223</td>
+<td style="text-align: right;">182</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">55%</td>
+</tr>
+<tr>
+<td>2018</td>
+<td style="text-align: right;">708</td>
+<td style="text-align: right;">334</td>
+<td style="text-align: right;">283</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">54%</td>
+</tr>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">401</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">64%</td>
+</tr>
+<tr>
+<td>2020</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">405</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">666</td>
+<td style="text-align: right;">454</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">74%</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">626</td>
+<td style="text-align: right;">302</td>
+<td style="text-align: right;">315</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">49%</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">606</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">476</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">21%</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">557</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">449</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Note: country may be passport or residence; recording appears to change from 2024.</p>
+<h3 id="top-countries-individual-sprint-duathlon-finishers">Top countries, individual + sprint + duathlon finishers</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="">
+<thead>
+<tr>
+<th>Rank</th>
+<th>2024</th>
+<th>2025</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Thailand 128</td>
+<td>Great Britain 108</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Great Britain 90</td>
+<td>Thailand 108</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Australia 50</td>
+<td>Australia 47</td>
+</tr>
+<tr>
+<td>4</td>
+<td>France 37</td>
+<td>France 31</td>
+</tr>
+<tr>
+<td>5</td>
+<td>United States 35</td>
+<td>Russia 30</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Germany 31</td>
+<td>Germany 24</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Russia 29</td>
+<td>Netherlands 22</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Italy 23</td>
+<td>United States 20</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Switzerland 16</td>
+<td>Italy 17</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Netherlands 15</td>
+<td>Malaysia 14</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="estimate-inputs">Estimate inputs</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Input</th>
+<th>Low</th>
+<th>Middle</th>
+<th>High</th>
+<th>Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Athletes counted 2022 / 2023 / 2024 / 2025</td>
+<td>784 / 716 / 688 / 628</td>
+<td>808 / 739 / 712 / 661</td>
+<td>808 / 739 / 712 / 661</td>
+<td>starters from results; relay people per team is an assumption</td>
+</tr>
+<tr>
+<td>People per relay team</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Thailand-resident share 2022</td>
+<td>76.9%</td>
+<td>75.6%</td>
+<td>74.3%</td>
+<td>recorded Thai share plus assumed share of non-Thai</td>
+</tr>
+<tr>
+<td>Thailand-resident share 2023</td>
+<td>54.1%</td>
+<td>51.5%</td>
+<td>48.9%</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Thailand-resident share 2024</td>
+<td>48.9%</td>
+<td>35.1%</td>
+<td>21.2%</td>
+<td>assumption carrying the country-field change</td>
+</tr>
+<tr>
+<td>Thailand-resident share 2025</td>
+<td>48.9%</td>
+<td>34.2%</td>
+<td>19.4%</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Phuket share of Thailand residents</td>
+<td>50%</td>
+<td>35%</td>
+<td>20%</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Entry fee, from abroad</td>
+<td>US$269.58</td>
+<td>US$301.10</td>
+<td>US$320.67</td>
+<td>2026 list price incl. 8.7% fee</td>
+</tr>
+<tr>
+<td>Entry fee, from Thailand</td>
+<td>4,275 baht</td>
+<td>6,044 baht</td>
+<td>6,957 baht</td>
+<td>2026 list price incl. 8.7% fee</td>
+</tr>
+<tr>
+<td>Nights, abroad / domestic</td>
+<td>3 / 2</td>
+<td>5 / 3</td>
+<td>7 / 4</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Rooms per athlete</td>
+<td>0.75</td>
+<td>1</td>
+<td>1 (+0.75 for companions)</td>
+<td>assumption</td>
+</tr>
+<tr>
+<td>Room rate per night</td>
+<td>3,300 baht</td>
+<td>5,200 baht</td>
+<td>8,000 baht</td>
+<td>2026 athlete code list price</td>
+</tr>
+<tr>
+<td>Food per person per day, abroad / domestic</td>
+<td>800 / 600 baht</td>
+<td>1,500 / 1,000 baht</td>
+<td>2,500 / 1,500 baht</td>
+<td>assumption from guide prices</td>
+</tr>
+<tr>
+<td>Transport and bike, abroad / domestic</td>
+<td>600 / 600 baht</td>
+<td>1,400 / 3,200 baht</td>
+<td>2,400 / 6,000 baht</td>
+<td>guide fares and organiser bike truck price</td>
+</tr>
+<tr>
+<td>Companions per athlete</td>
+<td>0.5</td>
+<td>1.0</td>
+<td>2.5</td>
+<td>assumption; high from Ironman Mallorca</td>
+</tr>
+<tr>
+<td>Baht per US dollar</td>
+<td>2022 35.0500 · 2023 34.7841 · 2024 35.2845 · 2025 32.8619</td>
+<td></td>
+<td></td>
+<td>FRED yearly averages</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="visitor-spending-estimate-by-year-phuket-residents-excluded">Visitor spending estimate by year (Phuket residents excluded)</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="xwide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Low (baht)</th>
+<th style="text-align: right;">Middle (baht)</th>
+<th style="text-align: right;">High (baht)</th>
+<th style="text-align: right;">Low (US$)</th>
+<th style="text-align: right;">Middle (US$)</th>
+<th style="text-align: right;">High (US$)</th>
+<th style="text-align: right;">Middle: from abroad / domestic / Phuket athletes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">7.3m</td>
+<td style="text-align: right;">22.7m</td>
+<td style="text-align: right;">79.1m</td>
+<td style="text-align: right;">0.21m</td>
+<td style="text-align: right;">0.65m</td>
+<td style="text-align: right;">2.26m</td>
+<td style="text-align: right;">197 / 397 / 214</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">9.2m</td>
+<td style="text-align: right;">26.6m</td>
+<td style="text-align: right;">91.2m</td>
+<td style="text-align: right;">0.26m</td>
+<td style="text-align: right;">0.76m</td>
+<td style="text-align: right;">2.62m</td>
+<td style="text-align: right;">358 / 247 / 133</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">9.4m</td>
+<td style="text-align: right;">29.5m</td>
+<td style="text-align: right;">107.9m</td>
+<td style="text-align: right;">0.27m</td>
+<td style="text-align: right;">0.84m</td>
+<td style="text-align: right;">3.06m</td>
+<td style="text-align: right;">462 / 162 / 87</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">8.4m</td>
+<td style="text-align: right;">27.3m</td>
+<td style="text-align: right;">101.0m</td>
+<td style="text-align: right;">0.25m</td>
+<td style="text-align: right;">0.83m</td>
+<td style="text-align: right;">3.07m</td>
+<td style="text-align: right;">435 / 147 / 79</td>
+</tr>
+</tbody>
+</table></div>
+<p>2025 middle case by line: entry fees 5.19m, accommodation 13.60m, food and local 3.70m, transport and bike 1.08m, companions 3.70m baht. Phuket residents' entry fees (memo, not added): 0.48m baht.</p>
+<h3 id="published-figures">Published figures</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Figure</th>
+<th>Event and period</th>
+<th>Stated by</th>
+<th>When</th>
+<th>Type</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>More than 74 million baht tourism spending in Phuket</td>
+<td>Triathlon, about 2016</td>
+<td>Laguna Phuket (organiser)</td>
+<td>press release titled for the 2017 date</td>
+<td>projection</td>
+<td><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/">lagunaphukettri.com</a></td>
+</tr>
+<tr>
+<td>About 9 million baht hotel room and food revenue inside Laguna</td>
+<td>Triathlon race weekend, about 2016</td>
+<td>Laguna Phuket</td>
+<td>same release</td>
+<td>projection</td>
+<td>same</td>
+</tr>
+<tr>
+<td>Over 90 million baht tourism spending</td>
+<td>Laguna Tri-Fest week 2015 (triathlon plus Challenge race)</td>
+<td>Prapa Hemmin, Laguna Phuket</td>
+<td>12 Oct 2015</td>
+<td>projection</td>
+<td><a target="_blank" rel="noopener" href="https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers">Thaiger</a></td>
+</tr>
+<tr>
+<td>"Stimulating the local economy" (no figure)</td>
+<td>Triathlon 2025</td>
+<td>Welcome attributed to the Governor of Phuket</td>
+<td>Nov 2025</td>
+<td>statement</td>
+<td><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf">LPT 2025 booklet</a></td>
+</tr>
+<tr>
+<td>Over 3,000 spectators</td>
+<td>Triathlon 2025</td>
+<td>Organiser</td>
+<td>Nov 2025</td>
+<td>estimate</td>
+<td><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/phuket-thailand-gears-up-for-the-31st-laguna-phuket-triathlon/">LPT 31st preview</a></td>
+</tr>
+<tr>
+<td>215 million baht (marathon, not triathlon)</td>
+<td>Marathon 2017</td>
+<td>Article citing Frost &amp; Sullivan</td>
+<td>7 Nov 2017</td>
+<td>estimate</td>
+<td><a target="_blank" rel="noopener" href="https://www.paulpoole.co.th/edm/nov17/sport-tourism-on-phuket.html">Paul Poole</a></td>
+</tr>
+<tr>
+<td>146.8 million baht (marathon, not triathlon)</td>
+<td>Marathon 2018</td>
+<td>Unnamed independent study</td>
+<td>14 Mar 2019</td>
+<td>study, unseen</td>
+<td><a target="_blank" rel="noopener" href="https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/">endurance.biz</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="laguna-resorts-amp-hotels-revenue-baht-million">Laguna Resorts &amp; Hotels revenue (baht million)</h3>
+<div class="scroll" tabindex="0" role="region" aria-label="Table"><table class="wide">
+<thead>
+<tr>
+<th>Year</th>
+<th style="text-align: right;">Hotel operations</th>
+<th style="text-align: right;">Property development</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Profit for the year</th>
+<th style="text-align: right;">Total in US$ million</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td style="text-align: right;">3,356.3</td>
+<td style="text-align: right;">2,568.2</td>
+<td style="text-align: right;">6,157.8</td>
+<td style="text-align: right;">358.2</td>
+<td style="text-align: right;">198.4</td>
+</tr>
+<tr>
+<td>2022</td>
+<td style="text-align: right;">2,398.0</td>
+<td style="text-align: right;">2,314.1</td>
+<td style="text-align: right;">4,796.7</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">136.9</td>
+</tr>
+<tr>
+<td>2023</td>
+<td style="text-align: right;">3,700.6</td>
+<td style="text-align: right;">2,263.0</td>
+<td style="text-align: right;">6,116.6</td>
+<td style="text-align: right;">375.7</td>
+<td style="text-align: right;">175.8</td>
+</tr>
+<tr>
+<td>2024</td>
+<td style="text-align: right;">4,152.5</td>
+<td style="text-align: right;">2,686.7</td>
+<td style="text-align: right;">7,593.8</td>
+<td style="text-align: right;">1,290.5</td>
+<td style="text-align: right;">215.2</td>
+</tr>
+<tr>
+<td>2025</td>
+<td style="text-align: right;">3,915.0</td>
+<td style="text-align: right;">4,971.2</td>
+<td style="text-align: right;">9,326.9</td>
+<td style="text-align: right;">2,016.7</td>
+<td style="text-align: right;">283.8</td>
+</tr>
+<tr>
+<td>H1 2026</td>
+<td style="text-align: right;">2,141.9</td>
+<td style="text-align: right;">2,208.5</td>
+<td style="text-align: right;">4,408.8</td>
+<td style="text-align: right;">n/a</td>
+<td style="text-align: right;">n/a</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="not-found">Not found</h3>
+<ul>
+<li>Any survey of Laguna Phuket Triathlon participants (residence, stay, party size, spending)</li>
+<li>Whether the results country field is passport or residence, and why it changed after 2023</li>
+<li>Any independent or measured economic impact of the triathlon; any figure after about 2016</li>
+<li>A sourced spending multiplier for Phuket</li>
+<li>Entry fees for 2022 to 2025; sprint, swim and fun run fees for any year</li>
+<li>Relay team sizes; meaning of the "entrants" figure on event pages</li>
+<li>Fun run lists for 2020, 2022, 2023 and 2025</li>
+<li>November occupancy and room rates for Phuket; Bang Tao rates outside Laguna hotels</li>
+<li>Race costs, race-week hotel revenue and occupancy at Laguna</li>
+<li>Charity totals for the triathlon after 2019</li>
+<li>Local jobs, vendors and volunteer numbers</li>
+<li>Road closure notices for 2024, 2025 and 2026</li>
+<li>Any resident, villa-owner or community complaint (several local news and forum sites could not be read)</li>
+<li>2026 entry numbers (race on 15 Nov 2026, after the research date)</li>
+</ul>
+</section>
+
+<section class="srcs">
+<h2 id="sources">All sources</h2>
+<p>Every source linked in this report, 47 in all.</p>
+  <h3>Official results</h3>
+  <ul>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/results/">Laguna Phuket Triathlon results page</a></li>
+    <li><a target="_blank" rel="noopener" href="https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141771">2024 individual leaderboard (Sportstats)</a></li>
+    <li><a target="_blank" rel="noopener" href="https://sportstats.one/event/laguna-phuket-triathlon/leaderboard/141772">2024 relay list (Sportstats)</a></li>
+  </ul>
+  <h3>Organiser pages</h3>
+  <ul>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/2017-laguna-phuket-triathlons-date-announced/">2017 date announcement and impact projection</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2025/11/LPT-2025-Booklet.pdf">2025 race booklet</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/phuket-thailand-gears-up-for-the-31st-laguna-phuket-triathlon/">31st race preview (spectator estimate)</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/embrace-the-challenge-early-bird-registration-for-the-32nd-laguna-phuket-triathlon-is-open-until-31st-may-2026/">2026 early bird release</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/lpt-individual/">Individual entry page</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/duathlon/">Duathlon entry page</a></li>
+    <li><a target="_blank" rel="noopener" href="https://lagunaphukettri.com/accommodation">Accommodation page</a></li>
+    <li><a target="_blank" rel="noopener" href="https://lagunaphukettri.com/?p=4603">Bike transport page</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/wp-content/uploads/2023/11/LPT23-Road-Closure-Flyer-ENG-Compressed.pdf">2023 road closure flyer</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/2017-laguna-phuket-triathlon-kicks-high-gear-towards-good-causes/">2017 race and good causes</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/?p=4538">2018 sprint charity (search summary only)</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/?p=4559">2020 race</a></li>
+    <li><a target="_blank" rel="noopener" href="https://lagunaphukettri.com/wp-content/uploads/2025/02/Laguna-Phuket-fact-sheet-EN-version-Feb-2025.pdf">Laguna Phuket fact sheet, February 2025</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.active.com/cherntalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-overseas-2024">Overseas registration page, 2024</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.active.com/cherngtalay-thalang-phuket/triathlon/races/laguna-phuket-triathlon-thais-and-expats-2024">Thais &amp; Expats registration page, 2024</a></li>
+  </ul>
+  <h3>Company filings</h3>
+  <ul>
+    <li><a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/1X38Y0OWGDAH2YWD/597799_4-LRH_2019%20FS_E.pdf">Laguna Resorts &amp; Hotels 2019 audited statements</a></li>
+    <li><a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/2PKMGLHQP674R2ML/787239_4.%20LRH_2023%20FS_E.pdf">2022 and 2023 audited statements</a></li>
+    <li><a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833473_4.LRH_2024%20FS_E.pdf">2024 audited statements</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.groupbanyan.com/sites/btg/files/2026-02/4_LRH_2025_FS_E.pdf">2025 audited statements</a></li>
+    <li><a target="_blank" rel="noopener" href="https://links.sgx.com/1.0.0/corporate-announcements/ZJ6K5WSKVHDSDEO6/833471_2.Explanation%20of%20operating%20results%20Q4-2024_MD-A_E.pdf">2024 results explanation</a></li>
+    <li><a target="_blank" rel="noopener" href="https://groupbanyan.com/sites/btg/files/2026-08/26-26_SGX_11%20Aug%202026_LRH-Q22026%20Results%20_full%20set.pdf">Q2 2026 results</a></li>
+    <li><a target="_blank" rel="noopener" href="https://groupbanyan.com/sites/btg/files/2026-09/29-26_Banyan%20Tree%20Holdings%20Limited%20-%20Delisting%20of%20LRH_full%20set.pdf">Banyan Tree Holdings delisting notice, 1 Sep 2026</a></li>
+  </ul>
+  <h3>Market reports and reference prices</h3>
+  <ul>
+    <li><a target="_blank" rel="noopener" href="https://c9hotelworks.com/wp-content/uploads/2025/02/Phuket-Hotel-Tourism-Market-Review_February-2025.pdf">C9 Hotelworks, Phuket Hotel and Tourism Market Review, February 2025</a></li>
+    <li><a target="_blank" rel="noopener" href="https://fred.stlouisfed.org/series/AEXTHUS">Federal Reserve yearly average exchange rates (FRED AEXTHUS)</a></li>
+    <li><a target="_blank" rel="noopener" href="https://majorcadailybulletin.com/news/local/2022/05/13/101167/sport-event-mallorca-ironman.html">Majorca Daily Bulletin, Ironman Mallorca, 2022</a></li>
+    <li><a target="_blank" rel="noopener" href="https://phuketexpatguide.com/blog/food-restaurants-bang-tao-cherng-talay/">Phuket Expat Guide, Bang Tao restaurants</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.thephuketnews.com/phuket-upbeat-on-high-season-outlook-98481.php">The Phuket News, high season outlook</a></li>
+    <li><a target="_blank" rel="noopener" href="https://kwx.liehendr.com/content/wikivoyage_en_all_maxi_2025-02/A/Bang_Tao">Wikivoyage, Bang Tao (February 2025 copy)</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.thetraveler.org/how-to-get-from-phuket-airport-to-diamond-resort-phuket/">thetraveler.org, airport transfers</a></li>
+  </ul>
+  <h3>News</h3>
+  <ul>
+    <li><a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2021/01/laguna-phuket-names-triathlon-dates">TTR Weekly, January 2021</a></li>
+    <li><a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2022/09/laguna-phuket-triathlon-is-back">TTR Weekly, September 2022</a></li>
+    <li><a target="_blank" rel="noopener" href="https://ttrweekly.com/site/2022/11/phuket-triathlon-is-back-to-winning-ways">TTR Weekly, November 2022</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphuket.com/?p=7665">Laguna Phuket, 2023</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.pattayamail.com/travel/wilde-times-in-phuket-kiwi-superstar-dominates-iconic-triathlon-481164">Pattaya Mail, 2024</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.lagunaphukettri.com/tayler-reid-and-georgia-taylor-brown-storm-to-victory-as-the-31st-laguna-phuket-triathlonrace-of-legends-concludes-in-spectacular-fashion-thai-athletes-shine-on-home-soil/">Laguna Phuket Tri, 2025 race report</a></li>
+    <li><a target="_blank" rel="noopener" href="https://thethaiger.com/news/business/laguna-trifest-draws-chinese-numbers">Thaiger, 12 October 2015</a></li>
+    <li><a target="_blank" rel="noopener" href="https://thethaiger.com/news/phuket/laguna-phuket-triathlon-road-closures-2">Thaiger, 18 November 2018, road closures</a></li>
+    <li><a target="_blank" rel="noopener" href="https://thethaiger.com/news/phuket/Laguna-Phuket-sells-Dusit-Thani-Bt262b">Thaiger, 2010, Dusit Thani sale</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.travelweekly.com/Travel-News/Hotel-News/Outrigger-sells-six-resorts-continues-to-run-them">Travel Weekly, Outrigger sells six resorts</a></li>
+    <li><a target="_blank" rel="noopener" href="https://mail.thephuketnews.com/laguna-phuket-triathlon-doubles-down-on-good-causes-two-charity-partners-unveiled-72751.php">The Phuket News, 2019, charity partners</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.paulpoole.co.th/edm/nov17/sport-tourism-on-phuket.html">Paul Poole, November 2017, sport tourism</a></li>
+    <li><a target="_blank" rel="noopener" href="https://endurance.biz/2019/industry-news/laguna-phuket-marathon-building-footprint-as-destination-marathon-in-south-east-asia/">endurance.biz, Laguna Phuket Marathon, 2019</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.nationthailand.com/news/tourism/40067436">The Nation, 2026, marathon field</a></li>
+    <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Laguna_Phuket_Triathlon">Wikipedia, Laguna Phuket Triathlon</a></li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <p>Prepared 9 November 2026 from public sources. Estimates are labelled as estimates.</p>
+</footer>
+
+</div>
+</body>
+</html>
